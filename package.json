@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "new": "node scripts/new.mjs",
+    "publish-draft": "node scripts/publish-draft.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
