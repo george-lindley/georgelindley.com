@@ -56,8 +56,8 @@ export const resume = {
       title: "Regional Commercial Lead",
       org: "Pearson Middle East",
       points: [
-        "Lead commercial and growth strategy across five Middle East markets; revenue grew 18% year on year through segmentation, demand forecasting and CRM analytics.",
-        "Set up Saudi tender intelligence where Pearson had no bid desk: daily AI matching of newly published government tenders against Pearson's profile, alerting colleagues across lines of business and briefing senior management on the KSA market: direct delivery training for major government projects emerged as the main opportunity, with custom courses needing GenAI capability as a smaller but frequent one.",
+        "Lead commercial and growth strategy across five Middle East markets; regional revenue grew 18% a year from 2018 to 2024, driven by segmentation, demand forecasting and CRM analytics.",
+        "To find revenue beyond the existing product range, set up Saudi tender intelligence where Pearson had no bid desk: daily AI matching of newly published government tenders against Pearson's profile, alerting colleagues across lines of business and briefing senior management on the KSA market: direct delivery training for major government projects emerged as the main opportunity, with custom courses needing GenAI capability as a smaller but frequent one.",
         "Act as solutions consultant in university technical decisions, such as LTI integration versus batch registration for digital learning platforms.",
         "Translate institutional and workforce needs into product positioning, pricing and go-to-market decisions with senior commercial, academic and product stakeholders.",
         "Design multi-market expansion and market-entry strategies, building long-term partnerships with universities and vocational providers.",
