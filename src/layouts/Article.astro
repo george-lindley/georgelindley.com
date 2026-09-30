@@ -23,13 +23,16 @@ interface Props {
 }
 const { section, seed, transitionName, title, description, pubDate, categories, cover, minutes, link, back } = Astro.props;
 const ogImage = cover ? (await getImage({ src: cover, width: 1200, format: 'jpg' })).src : undefined;
+// Portrait covers (e.g. a book) are shown whole and upright instead of cropped into the wide banner.
+const portrait = cover ? cover.height > cover.width : false;
+const morph = `view-transition-name:${transitionName}; view-transition-class: morph`;
 ---
 <Base title={title} description={description} section={section} image={ogImage} type="article">
   <article>
-    <div class="banner">
-      {cover
-        ? <Image src={cover} alt="" widths={[800, 1200, 1800]} sizes="(max-width: 60rem) 100vw, 75vw" loading="eager" style={`view-transition-name:${transitionName}; view-transition-class: morph`} />
-        : <CausalMotif seed={seed} width={1600} height={450} transitionName={transitionName} />}
+    <div class:list={['banner', { portrait }]}>
+      {cover && portrait && <Image src={cover} alt="" widths={[380, 760, 1140]} sizes="380px" loading="eager" style={morph} />}
+      {cover && !portrait && <Image src={cover} alt="" widths={[800, 1200, 1800]} sizes="(max-width: 60rem) 100vw, 75vw" loading="eager" style={morph} />}
+      {!cover && <CausalMotif seed={seed} width={1600} height={450} transitionName={transitionName} />}
     </div>
     <div class="inner">
       <header>
@@ -57,6 +60,19 @@ const ogImage = cover ? (await getImage({ src: cover, width: 1200, format: 'jpg'
 <style>
   .banner { aspect-ratio: 32 / 9; overflow: hidden; background: var(--tint); border-bottom: 1px solid var(--rule); }
   .banner :global(img), .banner :global(svg) { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .banner.portrait {
+    aspect-ratio: auto;
+    display: grid;
+    place-items: center;
+    padding: clamp(1.5rem, 4vw, 3rem) 1rem;
+    background: radial-gradient(circle, #dcdcd8 1px, transparent 1.2px) 0 0 / 16px 16px, var(--tint);
+  }
+  .banner.portrait :global(img) {
+    width: auto;
+    height: clamp(16rem, 42vh, 30rem);
+    object-fit: contain;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 12px 32px rgb(0 0 0 / 0.14);
+  }
   .inner { padding: 2.5rem var(--gutter) 5rem; }
   /* Centre the reading column (and anything after it) in the content area. */
   .inner > :global(*) { max-width: var(--measure); margin-inline: auto; }
