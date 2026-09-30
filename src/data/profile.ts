@@ -56,11 +56,11 @@ export const resume = {
       title: "Regional Commercial Lead",
       org: "Pearson Middle East",
       points: [
-        "Led regional commercial and growth strategy across five Middle East markets, contributing to 18% year-on-year revenue growth while strengthening segmentation, institutional demand forecasting, CRM analytics and competitive landscape assessment.",
-        "Directed cross-line-of-business initiatives at Regional Headquarters, aligning product, assessment and partnership strategy to evolving education system priorities and workforce demands.",
-        "Designed and implemented multi-market expansion and market entry strategies, establishing long-term institutional partnerships across universities and vocational providers.",
-        "Integrated CRM and market data analysis into regional planning processes, strengthening forecasting accuracy and strategic resource allocation.",
-        "Partnered with product, academic and senior leadership teams to translate sector insight into pricing strategy, positioning and scalable go-to-market frameworks.",
+        "Lead commercial and growth strategy across five Middle East markets; revenue grew 18% year on year through segmentation, demand forecasting and CRM analytics.",
+        "Set up Saudi tender intelligence where Pearson had no bid desk: daily AI matching of newly published government tenders against Pearson's profile, alerting colleagues across lines of business and briefing senior management on the KSA market, where direct training emerged as the main growth opportunity.",
+        "Act as solutions consultant in university technical decisions, such as LTI integration versus batch registration for digital learning platforms.",
+        "Translate institutional and workforce needs into product positioning, pricing and go-to-market decisions with senior commercial, academic and product stakeholders.",
+        "Design multi-market expansion and market-entry strategies, building long-term partnerships with universities and vocational providers.",
       ],
     },
     {
@@ -68,9 +68,9 @@ export const resume = {
       title: "Learning Consultant",
       org: "Pearson Middle East",
       points: [
-        "Advised regional universities on English language program development and learning outcomes optimization, aligning institutional needs with Pearson solutions",
-        "Led implementation of digital learning platforms across major assessment projects, managing stakeholder relationships and change management processes",
-        "Conducted regional market analysis and education trend research to inform product strategy and sales approach",
+        "Led market validation for Academic Progress using regional institutional data and focus groups; it became Pearson's #1 English course in Africa, the Middle East and Turkey, 2020–2022.",
+        "Grew the anchor university account about 50% a year from 2017 to 2022, with price per course up 70% after the move to blended digital courseware.",
+        "Advised regional universities on English programmes and learning outcomes, and led digital learning platform rollouts through adoption and change management.",
       ],
     },
     {
@@ -78,17 +78,17 @@ export const resume = {
       title: "Sales Manager",
       org: "Pearson Saudi Arabia",
       points: [
-        "Managed regional sales operations including revenue forecasting, territory planning, and account strategy development",
-        "Conducted market analysis and competitive intelligence to inform product selection and sales representative training programs",
-        "Led development of regional product line that became multi-million revenue generator and market leader in the region",
+        "Ran regional sales operations: revenue forecasting, territory planning and account strategy.",
+        "Grew a regional product line to USD 7M in sales and market leadership in the region.",
+        "Used market analysis and competitive intelligence to shape product selection and sales training.",
       ],
     },
     {
       period: "April 2016 - October 2017",
-      title: "Language Teacher",
+      title: "Language Teacher / EdTech Contributor",
       org: "King Saud University",
       points: [
-        "Delivered academic English instruction to preparatory year students, designing curriculum and assessment strategies",
+        "Taught academic English to preparatory-year students, and built interactive content, assessments and digital exam-preparation workflows.",
       ],
     },
   ],
@@ -99,6 +99,14 @@ export const resume = {
       org: "Aston University",
       points: [
         "Dissertation: Saudi Procurement Bid Intelligence, testing whether national procurement award data can support supplier bid decisions, and where the limits of that intelligence lie.",
+      ],
+    },
+    {
+      period: "2023",
+      title: "CS50x: Introduction to Computer Science",
+      org: "Harvard University (online)",
+      points: [
+        "Foundations in programming and computer science; completed 2023.",
       ],
     },
     {
@@ -133,6 +141,12 @@ export const resume = {
         "Modules in Teaching English as a Foreign Language, Language Pedagogy and Linguistics",
       ],
     },
+  ],
+  languages: [
+    { name: "English", level: "Native" },
+    { name: "Spanish", level: "C1" },
+    { name: "French", level: "C1" },
+    { name: "Arabic", level: "Learning" },
   ],
   skills: [
     {
