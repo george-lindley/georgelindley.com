@@ -4,7 +4,7 @@ description: "A governed database of 1,000+ regulated plant species, with geospa
 pubDate: 2025-04-02
 categories: ["Analytics","Data Visualisation"]
 link: "https://regulatedplants.unu.edu"
-cover: "../../assets/uploads/2025/04/regulated_interactive_map_small.jpg"
+cover: "../../assets/uploads/2025/04/regulated-plants-cover.jpg"
 ---
 
 Across the world, governments publish lists of regulated plant species to protect ecosystems, agriculture, and biodiversity. However, these lists are scattered across agencies, jurisdictions, and formats, making it difficult to answer even basic analytical questions:

@@ -4,7 +4,7 @@ description: "An interactive tool for learning causal inference: drag data onto 
 pubDate: 2026-09-29
 categories: ["Analytics","Data Visualisation","Product Development"]
 link: "https://causalblocks.com"
-cover: "../../assets/uploads/2026/09/thumbnail.png"
+cover: "../../assets/uploads/2026/09/causal-blocks-cover.jpg"
 ---
 
 ## Solution Overview
