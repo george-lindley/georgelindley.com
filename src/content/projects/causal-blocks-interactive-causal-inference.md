@@ -2,7 +2,7 @@
 title: "Causal Blocks: Interactive Causal Inference"
 description: "An interactive tool for learning causal inference: drag data onto a canvas, draw causal arrows, and watch the DoWhy estimate update."
 pubDate: 2026-09-29
-categories: ["Analytics","Data Visualisation","Product Development"]
+categories: ["Analytics","Data Visualisation"]
 link: "https://causalblocks.com"
 cover: "../../assets/uploads/2026/09/causal-blocks-cover.jpg"
 ---
