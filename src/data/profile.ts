@@ -98,8 +98,7 @@ export const resume = {
       title: "Masters in Business Analytics",
       org: "Aston University",
       points: [
-        "Specializing in causal inference and education policy analytics.",
-        "Capstone project: Causal analysis of international reading achievement using PIRLS data.",
+        "Dissertation: Saudi Procurement Bid Intelligence, testing whether national procurement award data can support supplier bid decisions, and where the limits of that intelligence lie.",
       ],
     },
     {
