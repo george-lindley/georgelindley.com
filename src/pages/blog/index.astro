@@ -15,5 +15,6 @@ const posts = await getPosts();
 </Base>
 
 <style>
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); gap: 2rem; }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+  @media (max-width: 50rem) { .grid { grid-template-columns: 1fr; } }
 </style>

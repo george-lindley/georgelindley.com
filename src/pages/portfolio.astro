@@ -53,5 +53,8 @@ const rules = categories
   .filters label:hover { border-color: var(--rule); color: var(--ink); }
   .filters input:checked + label { border-color: var(--accent); color: var(--ink); }
   .filters input:focus-visible + label { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); gap: 2.5rem 1.75rem; }
+  /* Fixed column counts (not auto-fill) so a row of projects always spans the full width. */
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem 1.75rem; }
+  @media (max-width: 75rem) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 40rem) { .grid { grid-template-columns: 1fr; } }
 </style>

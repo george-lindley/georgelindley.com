@@ -22,8 +22,8 @@
 
   --sidebar: 15rem;
   --gutter: clamp(1.25rem, 4vw, 4.5rem);
-  --content: 72rem;
-  --measure: 40rem;   /* ~70 characters of 17px prose */
+  --content: 96rem;   /* section pages: wide, centred in the space beside the sidebar */
+  --measure: 46rem;   /* article column: ~75 characters of 18px prose */
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -114,7 +114,7 @@ a:hover { color: var(--accent-text); }
 /* ---------------------------------------------------------------------------
    Long-form content (rendered Markdown)
    --------------------------------------------------------------------------- */
-.prose { max-width: var(--measure); font-size: 1.0625rem; line-height: 1.8; color: #4a4a4a; }
+.prose { max-width: var(--measure); font-size: 1.125rem; line-height: 1.8; color: #4a4a4a; }
 .prose > * + * { margin-top: 1.1em; }
 .prose p, .prose ul, .prose ol, .prose blockquote, .prose figure, .prose table, .prose pre { margin-bottom: 0; }
 .prose h2 { margin-top: 2.2em; font-size: var(--step-2); }
