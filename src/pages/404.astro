@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import PageShell from '../components/PageShell.astro';
+import CausalMotif from '../components/CausalMotif.astro';
+---
+<Base title="Page not found">
+  <PageShell title="Page not found" lead="This page doesn't exist, or it moved when the site was rebuilt.">
+    <div class="motif"><CausalMotif seed="404" width={800} height={300} /></div>
+    <p>Try the <a href="/">home page</a>, the <a href="/blog/">blog</a> or the <a href="/portfolio/">portfolio</a>.</p>
+  </PageShell>
+</Base>
+
+<style>
+  .motif { max-width: 40rem; margin-bottom: 2rem; border: 1px solid var(--rule); }
+</style>

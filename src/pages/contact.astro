@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import PageShell from '../components/PageShell.astro';
+import Icon from '../components/Icon.astro';
+import { profile } from '../data/profile';
+
+const linkedin = profile.social.find((s) => s.icon === 'linkedin')!;
+const blocks = [
+  { icon: 'map-pin', title: 'Currently in', value: profile.location },
+  { icon: 'mail', title: 'Send an email', value: profile.email, href: `mailto:${profile.email}` },
+  { icon: 'linkedin', title: 'Connect on LinkedIn', value: '/georgelindley', href: linkedin.href },
+] as const;
+---
+<Base title="Contact" section="contact" description={`Get in touch with ${profile.name}.`}>
+  <PageShell title="Contact" lead="The fastest way to reach me is email or LinkedIn. I usually reply within a couple of days.">
+    <ul class="blocks">
+      {blocks.map((b) => (
+        <li>
+          <Icon name={b.icon} size={30} class="icon" />
+          <h2>{b.title}</h2>
+          {'href' in b
+            ? <a href={b.href} rel={b.icon === 'linkedin' ? 'me noopener' : undefined} target={b.icon === 'linkedin' ? '_blank' : undefined}>{b.value}</a>
+            : <p>{b.value}</p>}
+        </li>
+      ))}
+    </ul>
+  </PageShell>
+</Base>
+
+<style>
+  .blocks { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+  .blocks li { display: grid; justify-items: center; gap: 0.3rem; padding: 2rem 1.25rem; border: 1px solid var(--rule); text-align: center; }
+  .blocks :global(.icon) { color: #b5b5b2; margin-bottom: 0.5rem; }
+  h2 { margin: 0; font-size: 0.9375rem; }
+  .blocks a, .blocks p { margin: 0; color: var(--accent-text); font-size: var(--step-1); overflow-wrap: anywhere; text-decoration: none; }
+  .blocks a:hover { text-decoration: underline; }
+</style>

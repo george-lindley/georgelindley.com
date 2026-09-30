@@ -1,0 +1,40 @@
+---
+// Blog posts live at the site root (/causal-ai-for-business/) to keep the old WordPress URLs working.
+import { render } from 'astro:content';
+import Article from '../layouts/Article.astro';
+import PostCard from '../components/PostCard.astro';
+import { getPosts, readingMinutes, type Post } from '../lib/content';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post, more: posts.filter((p) => p !== post).slice(0, 2) },
+  }));
+}
+
+interface Props { post: Post; more: Post[] }
+const { post, more } = Astro.props;
+const { Content } = await render(post);
+---
+<Article
+  section="blog"
+  seed={post.id}
+  transitionName={`post-${post.id}`}
+  {...post.data}
+  minutes={readingMinutes(post.body)}
+  back={{ href: '/blog/', label: 'All posts' }}
+>
+  <Content />
+  {more.length > 0 && (
+    <aside slot="after" class="more">
+      <h2 class="block-title">More writing</h2>
+      <div class="grid">{more.map((p) => <PostCard post={p} />)}</div>
+    </aside>
+  )}
+</Article>
+
+<style>
+  .more { margin-top: 4.5rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); gap: 1.75rem; }
+</style>

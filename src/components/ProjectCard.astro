@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import CausalMotif from './CausalMotif.astro';
+import { projectUrl, type Project } from '../lib/content';
+
+interface Props { project: Project; filterKeys?: string }
+const { project, filterKeys } = Astro.props;
+const { title, cover, categories, draft } = project.data;
+const vt = `project-${project.id}`;
+---
+<article class="card" data-filter={filterKeys}>
+  <a href={projectUrl(project)}>
+    <div class="media">
+      {cover
+        ? <Image src={cover} alt="" widths={[400, 700, 1000]} sizes="(max-width: 40rem) 100vw, 33vw" style={`view-transition-name:${vt}; view-transition-class: morph`} />
+        : <CausalMotif seed={project.id} width={700} height={420} transitionName={vt} />}
+    </div>
+    <h3>{title}{draft && <span class="draft">Draft</span>}</h3>
+    <p class="cats">{categories.join(', ')}</p>
+  </a>
+</article>
+
+<style>
+  .card a { display: block; text-decoration: none; color: inherit; }
+  .media { aspect-ratio: 5 / 3; overflow: hidden; background: var(--tint); border: 1px solid var(--rule); }
+  .media :global(img), .media :global(svg) { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s var(--ease); }
+  .card a:hover .media :global(img), .card a:hover .media :global(svg) { transform: scale(1.04); }
+  h3 { margin: 0.9rem 0 0.15rem; font-size: 1rem; transition: color 0.2s; }
+  .card a:hover h3 { color: var(--accent-text); }
+  .cats { margin: 0; color: var(--muted); font-size: 0.75rem; }
+  .draft { margin-left: 0.5rem; padding: 0.05em 0.45em; background: var(--canvas); color: var(--muted); font-size: 0.6875rem; font-weight: 500; vertical-align: middle; }
+</style>

@@ -1,0 +1,26 @@
+---
+// Standard padded page with the title + hairline rule header used by every section.
+interface Props { title: string; lead?: string; wide?: boolean }
+const { title, lead, wide = false } = Astro.props;
+---
+<div class:list={['shell', { wide }]}>
+  <header class="page-header">
+    <h1>{title}</h1>
+    {lead && <p class="lead">{lead}</p>}
+  </header>
+  <slot />
+</div>
+
+<style>
+  .shell {
+    max-width: var(--content);
+    padding: clamp(2rem, 5vw, 3.5rem) var(--gutter) 5rem;
+  }
+  .page-header {
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  h1 { margin: 0; font-size: var(--step-3); }
+  .lead { margin: 0.5rem 0 0; max-width: var(--measure); color: var(--muted); }
+</style>

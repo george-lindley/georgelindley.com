@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import PageShell from '../components/PageShell.astro';
+import Timeline from '../components/Timeline.astro';
+import SkillBar from '../components/SkillBar.astro';
+import Icon from '../components/Icon.astro';
+import { profile, resume } from '../data/profile';
+
+let n = 0; // running index so bars fill one after another across both groups
+---
+<Base title="Resume" section="resume" description={resume.summary}>
+  <PageShell title="Resume" lead={resume.summary}>
+    <div class="grid">
+      <div>
+        <h2 class="block-title">Experience</h2>
+        <Timeline items={resume.experience} />
+        <h2 class="block-title">Education</h2>
+        <Timeline items={resume.education} />
+      </div>
+      <aside>
+        {resume.skills.map((group) => (
+          <section class="skills">
+            <h2 class="block-title">{group.title}</h2>
+            {group.items.map((s) => <SkillBar name={s.name} value={s.value} delay={120 + n++ * 70} />)}
+          </section>
+        ))}
+        <a class="button" href={profile.cv} download>
+          <span class="with-icon"><Icon name="download" size={16} /> Download my CV</span>
+        </a>
+      </aside>
+    </div>
+  </PageShell>
+</Base>
+
+<style>
+  .grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(16rem, 1fr); gap: 3.5rem; }
+  .skills { margin-bottom: 2.5rem; }
+  aside { align-self: start; position: sticky; top: 2rem; }
+  .with-icon { display: inline-flex; align-items: center; gap: 0.5rem; }
+  @media (max-width: 70rem) {
+    .grid { grid-template-columns: 1fr; }
+    aside { position: static; }
+  }
+</style>

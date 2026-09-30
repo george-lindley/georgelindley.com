@@ -1,0 +1,174 @@
+---
+import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
+import portrait from '../assets/site/george.png';
+import { profile } from '../data/profile';
+import { nav, type Section } from '../data/site';
+
+interface Props { section?: Section }
+const { section } = Astro.props;
+---
+<header class="sidebar">
+  <a class="identity" href="/" aria-label={`${profile.name}, home`}>
+    <Image src={portrait} alt="" width={96} height={96} densities={[1, 2]} class="portrait" loading="eager" />
+    <span class="name">{profile.name}</span>
+    <span class="role">{profile.role}</span>
+  </a>
+
+  <button class="menu-toggle" popovertarget="site-nav" aria-label="Menu">
+    <Icon name="menu" size={22} />
+  </button>
+
+  <!-- On small screens this becomes a popover menu (native Popover API, no JS). -->
+  <nav id="site-nav" popover aria-label="Main">
+    <button class="menu-close" popovertarget="site-nav" popovertargetaction="hide" aria-label="Close menu">
+      <Icon name="close" size={22} />
+    </button>
+    <ul class="menu">
+      {nav.map((item) => (
+        <li>
+          <a href={item.href} aria-current={item.id === section ? 'page' : undefined}>{item.label}</a>
+        </li>
+      ))}
+    </ul>
+    <ul class="social">
+      {profile.social.map((s) => (
+        <li>
+          <a href={s.href} aria-label={s.label} title={s.label} rel="me noopener" target="_blank">
+            <Icon name={s.icon} size={14} />
+          </a>
+        </li>
+      ))}
+      <li>
+        <a href={`mailto:${profile.email}`} aria-label="Email" title="Email"><Icon name="mail" size={14} /></a>
+      </li>
+    </ul>
+    <p class="copyright">© {new Date().getFullYear()} {profile.name}</p>
+  </nav>
+</header>
+
+<style>
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: var(--sidebar);
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    z-index: 10;
+  }
+  .identity {
+    display: grid;
+    justify-items: center;
+    padding: 2.5rem 1.25rem 1.75rem;
+    text-align: center;
+    text-decoration: none;
+  }
+  .portrait { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; background: var(--canvas); }
+  .name { margin-top: 1.1rem; color: var(--ink); font-size: var(--step-2); font-weight: 600; line-height: 1.2; }
+  .role { margin-top: 0.35rem; color: var(--muted); font-size: var(--step--1); }
+
+  /* Desktop: the popover is just a normally-flowing, always-visible nav. */
+  nav[popover] {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: static;
+    inset: auto;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    overflow: visible;
+  }
+  .menu-toggle, .menu-close { display: none; }
+
+  .menu { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  .menu a {
+    position: relative;
+    display: block;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink);
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  /* The theme's signature: an accent bar on the right edge of the active item. */
+  .menu a::after {
+    content: '';
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 2px;
+    background: var(--accent);
+    transform: scaleY(0);
+    transition: transform 0.25s var(--ease);
+  }
+  .menu a:hover { background: var(--tint); color: var(--ink); }
+  .menu a:hover::after { transform: scaleY(0.4); }
+  .menu a[aria-current='page'] { background: var(--tint); }
+  .menu a[aria-current='page']::after { transform: none; }
+
+  .social { display: flex; justify-content: center; gap: 0.35rem; list-style: none; margin: 2rem 0 0; padding: 0; }
+  .social a {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    background: var(--canvas);
+    color: var(--muted);
+    transition: background-color 0.2s, color 0.2s;
+  }
+  .social a:hover { background: var(--accent); color: #fff; }
+  .copyright { margin: auto 0 0; padding: 2rem 1rem 1.25rem; color: #b0b0ad; font-size: 0.6875rem; text-align: center; }
+
+  /* Mobile: compact top bar + popover menu */
+  @media (max-width: 60rem) {
+    .sidebar {
+      position: sticky;
+      top: 0;
+      inset: 0 0 auto;
+      width: auto;
+      flex-direction: row;
+      align-items: center;
+      overflow: visible;
+      border-bottom: 1px solid var(--rule);
+    }
+    .identity { grid-template-columns: auto 1fr; justify-items: start; column-gap: 0.75rem; padding: 0.6rem 1rem; text-align: left; }
+    .portrait { grid-row: span 2; width: 40px; height: 40px; }
+    .name { margin: 0; font-size: var(--step-0); }
+    .role { margin: 0; font-size: 0.75rem; }
+    .menu-toggle, .menu-close {
+      display: grid;
+      place-items: center;
+      margin-left: auto;
+      width: 3rem;
+      height: 3rem;
+      border: 0;
+      background: none;
+      color: var(--ink);
+      cursor: pointer;
+    }
+    nav[popover] {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100dvh;
+      padding: 1rem;
+      background: var(--paper);
+      opacity: 0;
+      transform: translateY(-0.75rem);
+      transition: opacity 0.2s, transform 0.25s var(--ease), display 0.25s allow-discrete, overlay 0.25s allow-discrete;
+    }
+    nav[popover]:not(:popover-open) { display: none; }
+    nav[popover]:popover-open { opacity: 1; transform: none; }
+    @starting-style { nav[popover]:popover-open { opacity: 0; transform: translateY(-0.75rem); } }
+    .menu-close { position: absolute; top: 0.5rem; right: 0.5rem; }
+    .menu { margin-top: 3.5rem; }
+    .menu a { padding: 1rem; font-size: var(--step-1); }
+  }
+</style>

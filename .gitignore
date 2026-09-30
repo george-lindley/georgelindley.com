@@ -1,0 +1,11 @@
+# WordPress mirror + export (source material only, never built or committed)
+reference/
+
+node_modules/
+dist/
+.astro/
+.DS_Store
+
+# Drafts stay on this machine (previewable with `npm run dev`, never pushed)
+src/content/*/_drafts/
+src/assets/drafts/

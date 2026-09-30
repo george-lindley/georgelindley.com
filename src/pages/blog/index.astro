@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageShell from '../../components/PageShell.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getPosts } from '../../lib/content';
+
+const posts = await getPosts();
+---
+<Base title="Blog" section="blog" description="Writing on causal inference, data analytics, AI and education.">
+  <PageShell title="Blog" lead="Writing on causal inference, data analytics, AI and education.">
+    <div class="grid">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  </PageShell>
+</Base>
+
+<style>
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); gap: 2rem; }
+</style>

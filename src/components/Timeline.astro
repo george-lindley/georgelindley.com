@@ -1,0 +1,68 @@
+---
+interface Item { period: string; title: string; org: string; points: readonly string[] }
+interface Props { items: readonly Item[] }
+const { items } = Astro.props;
+---
+<ol class="timeline">
+  {items.map((item) => (
+    <li>
+      <div class="when">
+        <span class="period">{item.period.replace(' - ', ' – ')}</span>
+        <span class="org">{item.org}</span>
+      </div>
+      <div class="what">
+        <h3>{item.title}</h3>
+        {item.points.length > 1
+          ? <ul>{item.points.map((p) => <li>{p}</li>)}</ul>
+          : <p>{item.points[0]}</p>}
+      </div>
+    </li>
+  ))}
+</ol>
+
+<style>
+  .timeline { list-style: none; margin: 0 0 3rem; padding: 0; }
+  .timeline > li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    gap: 0 2.25rem;
+    padding-bottom: 1.75rem;
+  }
+  /* vertical rule + ring marker, as in the original "timeline-second-style" */
+  .timeline > li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(11rem + 1.125rem);
+    width: 1px;
+    background: var(--rule);
+  }
+  .timeline > li::after {
+    content: '';
+    position: absolute;
+    top: 0.55rem;
+    left: calc(11rem + 1.125rem - 5px);
+    width: 11px;
+    height: 11px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    background: var(--paper);
+  }
+  .when { text-align: right; }
+  .period { display: block; color: var(--ink); font-size: 0.875rem; font-weight: 600; line-height: 1.5; margin-top: 0.2rem; }
+  .org { display: block; color: var(--muted); font-size: 0.75rem; }
+  h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+  .what p, .what ul { margin: 0; font-size: 0.875rem; }
+  .what ul { padding-left: 1.1rem; }
+  .what ul li { margin-bottom: 0.35rem; }
+  .what ul li::marker { color: var(--accent); }
+
+  @media (max-width: 40rem) {
+    .timeline > li { grid-template-columns: 1fr; padding-left: 1.5rem; }
+    .timeline > li::before { left: 0.3rem; }
+    .timeline > li::after { left: calc(0.3rem - 5px); }
+    .when { text-align: left; margin-bottom: 0.4rem; }
+  }
+</style>

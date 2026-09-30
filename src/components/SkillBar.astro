@@ -1,0 +1,35 @@
+---
+// Animated skill bar. No JS: the fill is a CSS keyframe that runs when the page renders.
+// clip-path (not width) is animated so the browser never has to recompute layout mid-animation,
+// and the rounded ends aren't squashed the way transform: scaleX() would squash them.
+interface Props { name: string; value: number; delay?: number }
+const { name, value, delay = 0 } = Astro.props;
+const pct = Math.max(0, Math.min(100, value));
+---
+<div class="skill" style={`--value:${pct}%; --delay:${delay}ms`}>
+  <div class="label">
+    <span>{name}</span>
+    <span class="value">{pct}%</span>
+  </div>
+  <div class="track" role="meter" aria-label={name} aria-valuenow={pct} aria-valuemin="0" aria-valuemax="100">
+    <div class="fill"></div>
+  </div>
+</div>
+
+<style>
+  .skill { margin-bottom: 1rem; }
+  .label { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.3rem; }
+  .label span:first-child { color: var(--ink); font-size: 0.8125rem; font-weight: 600; }
+  .value { color: var(--muted); font-size: 0.6875rem; }
+  .track { height: 10px; padding: 1px; border: 1px solid var(--accent); border-radius: 8px; }
+  .fill {
+    width: var(--value);
+    height: 100%;
+    border-radius: 6px;
+    background: var(--accent);
+    animation: fill 1.6s var(--ease) var(--delay) both;
+  }
+  .value { animation: fade 0.6s linear calc(var(--delay) + 0.8s) both; }
+  @keyframes fill { from { clip-path: inset(0 100% 0 0 round 6px); } to { clip-path: inset(0 0 0 0 round 6px); } }
+  @keyframes fade { from { opacity: 0; } }
+</style>
