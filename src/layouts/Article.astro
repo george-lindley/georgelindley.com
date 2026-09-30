@@ -22,7 +22,9 @@ interface Props {
   back: { href: string; label: string };
 }
 const { section, seed, transitionName, title, description, pubDate, categories, cover, minutes, link, back } = Astro.props;
-const ogImage = cover ? (await getImage({ src: cover, width: 1200, format: 'jpg' })).src : undefined;
+const ogImage = cover
+  ? (await getImage({ src: cover, width: 1200, format: 'jpg' })).src
+  : `/og/${section === 'blog' ? 'blog' : 'project'}/${seed}.png`; // generated at build, see pages/og/
 ---
 <Base title={title} description={description} section={section} image={ogImage} type="article">
   <article>

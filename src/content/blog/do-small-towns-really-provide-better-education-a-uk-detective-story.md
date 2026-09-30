@@ -7,7 +7,7 @@ categories: ["Data Analytics","Education"]
 
 In 2023 the Office for National Statistics asked a question in a headline: *why do children and young people in smaller towns do better academically than those in larger towns?* The data is public, and across 1,082 English towns the gap is real: small towns average +0.30 on a standardised attainment score, large towns −0.81.
 
-![](../../assets/uploads/2026/09/01-attainment-by-size.png)
+![Bar chart: average education score by town size across 1,082 English towns (ONS, 2023). Small towns +0.30, medium towns −0.25, large towns −0.81.](../../assets/uploads/2026/09/01-attainment-by-size.png)
 
 I spent a while with that dataset. Here are three ways to read it. The first two are standard practice. Only the third tells you what is going on.
 
@@ -19,7 +19,7 @@ I spent a while with that dataset. Here are three ways to read it. The first two
 | ↳ the part flowing through deprivation | −1.99 points |
 | ↳ the direct effect, deprivation held fixed | **+0.70** points |
 
-![](../../assets/uploads/2026/09/03-three-readings.png)
+![Bar chart comparing three readings of the large-versus-small-town gap. The correlation gives −1.11 and controlling for everything gives +0.59. The causal story's total effect is −1.28, of which −1.99 runs through deprivation and +0.70 is the direct effect with deprivation held fixed.](../../assets/uploads/2026/09/03-three-readings.png)
 
 The first says small towns are better. The second says large towns are better. Both are computed correctly, from the same data. Neither tells you why, and the one that looks more rigorous is the one that misleads you more quietly.
 
@@ -35,13 +35,13 @@ But the headline asks *why*, and a comparison of averages cannot answer a why qu
 
 What comes along with size, in post-industrial England, is deprivation. 32% of small towns fall in the higher-deprivation band, against 69% of large towns. And the deprivation gap in attainment: 5.18 points, 1.43 standard deviations — is about four times larger than the biggest town-size gap. The headline is mostly measuring wealth while pointing at geography.
 
-![](../../assets/uploads/2026/09/02-deprivation-by-size.png)
+![Stacked bar chart: share of towns in each income-deprivation band. Higher deprivation covers 32% of small towns, 48% of medium towns and 69% of large towns.](../../assets/uploads/2026/09/02-deprivation-by-size.png)
 
 "Partly because" undersells it. Deprivation is not a footnote to a town-size story. It is most of the story, and once it is accounted for, the size effect underneath points the other way.
 
 Small towns win - on average they achieve better education attainment. Education attainment here is a composite index taking into account the same children's key stage exam results through the ages of 11 to their degree programs (if they went to university) As noted, there are multiple reasons that explain factors that are related to the high-performing towns - correlations between town characteristics and education attainment.
 
-![](../../assets/uploads/2026/09/dag-ons-size-alone.png)
+![Causal graph with a single arrow from Town size (treatment) to Education score (outcome): the model implied by comparing averages.](../../assets/uploads/2026/09/dag-ons-size-alone.png)
 
 *The graph the correlation implicitly assumes: nothing else matters.*
 
@@ -59,7 +59,7 @@ Do that here — region, deprivation, coastal, university, adult qualifications,
 
 That rule is not merely incomplete. It is wrong in two separate ways, and the second one is genuinely alarming.
 
-![](../../assets/uploads/2026/09/dag-control-for-everything.png)
+![Causal graph treating Region, Deprivation, University, Coastal and Adult degrees all as confounders, each with arrows into both Town size and Education score.](../../assets/uploads/2026/09/dag-control-for-everything.png)
 
 *What 'control for everything' assumes: every variable is a background cause.*
 
@@ -120,7 +120,7 @@ For the towns, the graph I would defend is short. Region shapes both town size a
 -   The **total effect** of being a large rather than a small town is **−1.28 points**. Adjust for region, and nothing else. This is the honest version of the ONS comparison.
 -   That total splits in two. **−1.99 points flow through deprivation.** The **direct effect** — the answer to "what if every town were equally deprived?", is **+0.70 points**, in favour of large towns.
 
-![](../../assets/uploads/2026/09/dag-deprivation-story.png)
+![Causal graph of the deprivation story: Region affects Town size and Deprivation; Town size affects Education score directly and through Deprivation, the mediator; Coastal affects Deprivation.](../../assets/uploads/2026/09/dag-deprivation-story.png)
 
 *Causation modelled correctly: 'the real story'*
 

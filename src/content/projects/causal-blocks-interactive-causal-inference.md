@@ -13,7 +13,7 @@ cover: "../../assets/uploads/2026/09/causal-blocks-cover.jpg"
 
 Causal Blocks is an interactive tool for learning causal inference by doing it. Students drag real data columns onto a canvas as blocks, draw arrows for what they believe causes what, and watch an estimate from DoWhy, Microsoft's causal inference library, update with every arrow. Each variable is coloured by the role the graph gives it: confounder, mediator, collider or instrument. The graph explains itself.
 
-[![](../../assets/uploads/2026/09/demo.png)](https://causalblocks.com)
+[![Screenshot of the Causal Blocks demo: a causal graph of region, town size, deprivation and coastal location feeding an education score, beside a panel reporting a total effect of −0.70 for larger towns.](../../assets/uploads/2026/09/demo.png)](https://causalblocks.com)
 
 ## The Demo: England's Small Towns
 

@@ -24,7 +24,7 @@ We developed a comprehensive analytical database of 1,000+ regulated plant speci
 
 Below is a screenshot of our homepage. To see the full website please go to [www.regulatedplants.unu.edu](http://www.regulatedplants.unu.edu)
 
-![](../../assets/uploads/2025/03/website_screenshot_regulated_plants_data.jpg)
+![Screenshot of the Regulated Plants Database homepage: a world map shading US states, Canadian provinces and Australian states by number of regulated species, above a searchable species table for Western Australia.](../../assets/uploads/2025/03/website_screenshot_regulated_plants_data.jpg)
 
 *Screenshot of the homepage - search regulated plants by location (geospatial analysis)*
 
@@ -75,7 +75,7 @@ By transforming fragmented regulatory data into actionable intelligence, this pl
 
 The system architecture reflects a common analytics pattern, taking input from various *data sources*, alongside the *user interaction* to create instant and useful visualisation as can be seen in below diagram.
 
-![](../../assets/uploads/2025/03/system_architecture_invasive.jpg)
+![System architecture diagram: government, CSV and research data flow through a Python ETL pipeline into a SQLite database, then a Flask API serving an HTML/JavaScript frontend with Leaflet.js maps.](../../assets/uploads/2025/03/system_architecture_invasive.jpg)
 
 ## Future Development: Prescriptive Analytics
 

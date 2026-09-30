@@ -3,7 +3,7 @@ import { Font } from 'astro:assets';
 import Sidebar from '../components/Sidebar.astro';
 import Icon from '../components/Icon.astro';
 import { profile } from '../data/profile';
-import { nav, goatcounter, type Section } from '../data/site';
+import { nav, goatcounter, googleSiteVerification, type Section } from '../data/site';
 import '../styles/global.css';
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
   image?: string;
   type?: 'website' | 'article';
 }
-const { title, description = profile.description, section, image, type = 'website' } = Astro.props;
+const { title, description = profile.description, section, image = '/og/site/default.png', type = 'website' } = Astro.props;
 const fullTitle = title ? `${title} | ${profile.name}` : `${profile.name} | ${profile.role}`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 
@@ -40,13 +40,15 @@ const speculation = JSON.stringify({
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="alternate" type="application/rss+xml" title={`${profile.name}: Blog`} href="/rss.xml" />
     <meta name="theme-color" content="#ffffff" />
+    {googleSiteVerification && <meta name="google-site-verification" content={googleSiteVerification} />}
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
     <meta property="og:type" content={type} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    {image && <meta property="og:image" content={new URL(image, Astro.site)} />}
-    <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <Font cssVariable="--font-poppins" preload={[{ weight: 400, style: 'normal' }, { weight: 600, style: 'normal' }]} />
     <script type="speculationrules" is:inline set:html={speculation} />

@@ -95,9 +95,9 @@ Key refinements included:
 -   Introduction of two new lower-level bands to widen accessibility
 -   Dedicated 21st-century skills sections within each unit
 
-![](../../assets/uploads/2022/08/academic_progress_1.jpg)
+![Front cover of Academic Progress Reading & Writing, Student Book 1 (GSE 17–29), published by Pearson.](../../assets/uploads/2022/08/academic_progress_1.jpg)
 
-![](../../assets/uploads/2022/08/ap_l3_page.jpeg)
+![Sample page from Academic Progress, "Plan a Start-Up", a 21st-century skills lesson built around the story of Saudi founder Ebrahim Al-Jassim and Hunger Station.](../../assets/uploads/2022/08/ap_l3_page.jpeg)
 
 These changes were not cosmetic. They reduced institutional resistance and strengthened curriculum alignment.
 

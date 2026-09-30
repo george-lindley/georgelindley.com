@@ -10,5 +10,8 @@ export const nav = [
 
 export type Section = (typeof nav)[number]['id'];
 
+/** Google Search Console ownership token (kept from the WordPress site so verification survives). */
+export const googleSiteVerification = '1-Iuj8OPhBexlGsyqRvUaHFLtJGMGeqlhm1w0qKJQi0';
+
 /** GoatCounter site code (the `<code>` in <code>.goatcounter.com). Empty = analytics off. */
 export const goatcounter = 'georgelindley';
