@@ -1,11 +1,13 @@
 ---
 title: "Regulated Plants: Geospatial Analytics"
-description: "A governed database of 1,000+ regulated plant species, with geospatial and species-level analysis of cross-border compliance risk."
+description: "A public reference database of regulated invasive plants across 104 jurisdictions, published with United Nations University (UNU-INWEH) and UC Davis."
 pubDate: 2025-04-02
 categories: ["Analytics","Data Visualisation"]
 link: "https://regulatedplants.unu.edu"
 cover: "../../assets/uploads/2025/04/regulated-plants-cover.jpg"
 ---
+
+**Published with United Nations University (UNU-INWEH) and the UC Davis Department of Plant Sciences**, the Regulated Plants Database is a public reference catalogue of regulated invasive plants and noxious weeds: **2,192 taxa across 104 jurisdictions**. It is hosted at [regulatedplants.unu.edu](https://regulatedplants.unu.edu), featured in UNU's Sustainability Nexus AID Tools collection, and was presented at the Dresden Nexus Conference 2025.
 
 Across the world, governments publish lists of regulated plant species to protect ecosystems, agriculture, and biodiversity. However, these lists are scattered across agencies, jurisdictions, and formats, making it difficult to answer even basic analytical questions:
 
@@ -17,16 +19,16 @@ This data cleaning and data analytics project was built to answer those question
 
 ## Solution Overview
 
-We developed a comprehensive analytical database of 1,000+ regulated plant species, paired with an interface designed for decision-making, not data browsing. The system supports two primary analytical entry points:
+We developed a comprehensive analytical database of 2,192 regulated plant taxa across 104 jurisdictions, paired with an interface designed for decision-making, not data browsing. The system supports two primary analytical entry points:
 
 1.  **Geospatial Analysis**: Visualizing regulatory density across states/provinces through interactive mapping
 2.  **Species-Based Analysis**: Searching by specific plant species to identify all jurisdictions where it faces regulation
 
-Below is a screenshot of our homepage. To see the full website please go to [www.regulatedplants.unu.edu](http://www.regulatedplants.unu.edu)
+Below is the current homepage. To explore it yourself, visit [regulatedplants.unu.edu](https://regulatedplants.unu.edu).
 
-![Screenshot of the Regulated Plants Database homepage: a world map shading US states, Canadian provinces and Australian states by number of regulated species, above a searchable species table for Western Australia.](../../assets/uploads/2025/03/website_screenshot_regulated_plants_data.jpg)
+![The Regulated Plants Database homepage: release details and the UNU-INWEH and UC Davis publishing partners, coverage of 104 jurisdictions and 2,192 taxa, and a world map shading regions by number of regulated species, with toggles for regional, national and international regulations.](../../assets/uploads/2026/09/regulated-plants-homepage.jpg)
 
-*Screenshot of the homepage - search regulated plants by location (geospatial analysis)*
+*The homepage: publishing partners, coverage statistics and the regulation map (geospatial analysis)*
 
 ## Data Analytics Approach
 

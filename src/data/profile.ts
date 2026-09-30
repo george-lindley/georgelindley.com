@@ -32,7 +32,7 @@ export const about = {
     {
       name: "Regulated Plants Database",
       href: "/project/invasive-plants-geospatial-analytics/",
-      text: "a governed compliance analytics platform for fragmented regulatory data. I handle the centralisation, cleaning, analysis and visualisation of the regulatory data.",
+      text: "a public reference database of regulated invasive plants, published with United Nations University (UNU-INWEH) and UC Davis. I handle the centralisation, cleaning, analysis and visualisation of the regulatory data.",
     },
     {
       name: "Saudi Procurement Bid Intelligence",
