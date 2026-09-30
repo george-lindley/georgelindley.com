@@ -6,7 +6,7 @@ export const profile = {
   role: "AI Solutions Consultant",
   location: "Riyadh, KSA",
   email: "george.j.lindley@gmail.com",
-  cv: "/files/george_lindley_cv_forward_deployed_ai_2026.pdf",
+  cv: "/files/george_lindley_cv_ai_solutions_consultant_2026.pdf",
   description:
     "I build GenAI and analytics products for education, workforce planning and institutional decision-making.",
   social: [
