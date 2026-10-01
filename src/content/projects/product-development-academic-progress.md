@@ -17,7 +17,7 @@ The objective was not simply to launch a new textbook, but to design a product t
 -   Addressed regulatory and cultural requirements
 -   Scaled sustainably across universities in the region
 
-The series became Pearson’s number one-selling English course across Africa, the Middle East, and Turkey in 2020, 2021, and 2022.
+The series became Pearson’s number one-selling English course across Africa, the Middle East, and Turkey in 2020, 2021, and 2022. I then led its expansion beyond Saudi Arabia: the series is now used in Qatar, Kuwait and the UAE.
 
 The success was rooted in a structured, data-led development framework.
 
