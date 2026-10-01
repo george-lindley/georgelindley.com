@@ -52,15 +52,23 @@ export const resume = {
   summary: "GenAI and analytics products for education, workforce planning and institutional decision-making.",
   experience: [
     {
-      period: "July 2021 - Present",
-      title: "Regional Commercial Lead",
+      period: "November 2017 - Present",
+      title: "Pearson: highlights across roles",
       org: "Pearson Middle East",
       points: [
-        "Lead commercial and growth strategy across five Middle East markets; regional revenue grew 18% a year from 2018 to 2024, driven by segmentation, demand forecasting and CRM analytics.",
-        "To find revenue beyond the existing product range, set up Saudi tender intelligence where Pearson had no bid desk: daily AI matching of newly published Saudi government tenders in education against Pearson's profile, alerting colleagues across lines of business and briefing senior management on the KSA market: direct delivery training for major government projects emerged as the main opportunity, with custom courses needing GenAI capability as a smaller but frequent one.",
+        "Regional revenue grew 18% a year from 2018 to 2024.",
+        "Grew the anchor university account about 50% a year from 2017 to 2022, with price per course up 70% after the move to blended digital courseware.",
+      ],
+    },
+    {
+      period: "July 2021 - Present",
+      title: "Regional Commercial Lead, KSA and Bahrain",
+      org: "Pearson Middle East",
+      points: [
+        "Lead commercial and growth strategy for KSA and Bahrain; manage an account manager since 2022.",
+        "To find revenue beyond the existing product range, set up Saudi tender intelligence where Pearson had no bid desk: scraping Etimad five times a day (about 100 new tenders a day, 50,000 a year), matching Arabic tenders against Pearson's English profile, and surfacing the 2–3 a month worth acting on. Briefed senior management on a year of this evidence to inform strategy in KSA.",
         "Act as solutions consultant in university technical decisions, such as LTI integration versus batch registration for digital learning platforms.",
         "Translate institutional and workforce needs into product positioning, pricing and go-to-market decisions with senior commercial, academic and product stakeholders.",
-        "Design multi-market expansion and market-entry strategies, building long-term partnerships with universities and vocational providers.",
       ],
     },
     {
@@ -69,7 +77,6 @@ export const resume = {
       org: "Pearson Middle East",
       points: [
         "Led market validation for Academic Progress using regional institutional data and focus groups; it became Pearson's #1 English course in Africa, the Middle East and Turkey, 2020–2022.",
-        "Grew the anchor university account about 50% a year from 2017 to 2022, with price per course up 70% after the move to blended digital courseware.",
         "Advised regional universities on English programmes and learning outcomes, and led digital learning platform rollouts through adoption and change management.",
       ],
     },
@@ -165,7 +172,7 @@ export const resume = {
       items: [
         { name: "Python / SQL Analytics", value: 80 },
         { name: "GenAI Workflow Design", value: 70 },
-        { name: "Vector Search / RAG", value: 90 },
+        { name: "Vector Search and Retrieval", value: 90 },
         { name: "Data Visualisation and Dashboards", value: 80 },
         { name: "Evaluation Design", value: 70 },
         { name: "Git / Version Control", value: 70 },
