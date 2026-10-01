@@ -56,7 +56,7 @@ export const resume = {
       title: "Pearson: across all roles",
       org: "Pearson Middle East",
       points: [
-        "Regional revenue grew 18% a year from 2018 to 2024.",
+        "KSA revenue grew 18% a year from 2018 to 2024.",
         "Grew the anchor university account about 50% a year from 2017 to 2022, with price per course up 70% after the move to blended digital courseware.",
       ],
     },
