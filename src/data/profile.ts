@@ -53,12 +53,11 @@ export const resume = {
   experience: [
     {
       period: "November 2017 - Present",
-      title: "Pearson: highlights across roles",
+      title: "Pearson: across all roles",
       org: "Pearson Middle East",
       points: [
         "Regional revenue grew 18% a year from 2018 to 2024.",
         "Grew the anchor university account about 50% a year from 2017 to 2022, with price per course up 70% after the move to blended digital courseware.",
-        "Led the multi-market expansion of Academic Progress beyond KSA; it is now used in Qatar, Kuwait and the UAE.",
       ],
     },
     {
@@ -66,7 +65,7 @@ export const resume = {
       title: "Regional Commercial Lead, KSA and Bahrain",
       org: "Pearson Middle East",
       points: [
-        "Lead commercial and growth strategy for KSA and Bahrain; manage an account manager since 2022.",
+        "Lead commercial and growth strategy for KSA and Bahrain; have managed an account manager since 2022.",
         "To find revenue beyond the existing product range, set up Saudi tender intelligence where Pearson had no bid desk: scraping Etimad five times a day (about 100 new tenders a day, 50,000 a year), matching Arabic tenders against Pearson's English profile, and surfacing the 2–3 a month worth acting on. Briefed senior management on a year of this evidence to inform strategy in KSA.",
         "Act as solutions consultant in university technical decisions, such as LTI integration versus batch registration for digital learning platforms.",
         "Translate institutional and workforce needs into product positioning, pricing and go-to-market decisions with senior commercial, academic and product stakeholders.",
@@ -78,6 +77,7 @@ export const resume = {
       org: "Pearson Middle East",
       points: [
         "Led market validation for Academic Progress using regional institutional data and focus groups; it became Pearson's #1 English course in Africa, the Middle East and Turkey, 2020–2022.",
+        "Led its expansion beyond KSA, into Qatar, Kuwait and the UAE.",
         "Advised regional universities on English programmes and learning outcomes, and led digital learning platform rollouts through adoption and change management.",
       ],
     },
