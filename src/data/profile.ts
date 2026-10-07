@@ -43,7 +43,6 @@ export const about = {
     { icon: "branch", title: "GenAI Product Development", text: "Building AI-enabled tools that turn messy institutional workflows into usable software, dashboards and decision support." },
     { icon: "trend", title: "Market & Growth Strategy", text: "Using sector insight, segmentation and commercial analysis to identify growth opportunities across education markets." },
     { icon: "bulb", title: "Education & Workforce Analytics", text: "Connecting education systems, labour-market signals and institutional data to inform programme strategy and skills alignment." },
-    { icon: "people", title: "Stakeholder Implementation", text: "Bridging senior stakeholders, product teams and non-technical users to move ideas from strategy into adoption." },
   ],
 } as const;
 
