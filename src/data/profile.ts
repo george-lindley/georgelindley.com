@@ -20,8 +20,7 @@ export const about = {
   kicker: "GenAI Products",
   intro: [
     "I build GenAI and analytics products for education, workforce planning and institutional decision-making.",
-    "Based in Riyadh, I combine 10 years’ education-sector experience with business analytics, AI product development and regional growth strategy across the Middle East.",
-    "My current work focuses on turning messy institutional problems into usable software. Current projects include:",
+    "Based in Riyadh, I combine 10 years’ education-sector experience with business analytics, AI product development and regional growth strategy across the Middle East. Current projects include:",
   ],
   current: [
     {
