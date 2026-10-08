@@ -43,7 +43,7 @@ export const about = {
 
 export const resume = {
   headline: "AI Solutions Consultant",
-  summary: "GenAI and analytics products for education, workforce planning and institutional decision-making.",
+  summary: "GenAI and analytics products for education and workforce planning.",
   experience: [
     {
       period: "November 2017 - Present",
