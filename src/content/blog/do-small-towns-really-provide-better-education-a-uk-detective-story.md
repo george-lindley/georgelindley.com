@@ -3,6 +3,9 @@ title: "Do small towns really educate children better?"
 description: "The ONS found children in smaller English towns do better at school. Three readings of the same data, and why only the causal one explains the gap."
 pubDate: 2025-10-16
 categories: ["Data Analytics","Education"]
+graph:
+  path: ["Town size", "Deprivation", "Education score"]
+  edges: [["Region", "Town size"], ["Region", "Deprivation"], ["Coastal", "Deprivation"], ["Town size", "Education score"]]
 ---
 
 In 2023 the Office for National Statistics asked a question in a headline: *why do children and young people in smaller towns do better academically than those in larger towns?* The data is public, and across 1,082 English towns the gap is real: small towns average +0.30 on a standardised attainment score, large towns −0.81.

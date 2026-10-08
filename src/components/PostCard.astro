@@ -1,11 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import CausalMotif from './CausalMotif.astro';
+import GraphCover from './GraphCover.astro';
 import { postUrl, formatDate, readingMinutes, type Post } from '../lib/content';
 
 interface Props { post: Post }
 const { post } = Astro.props;
-const { title, description, pubDate, categories, cover, draft } = post.data;
+const { title, description, pubDate, categories, cover, graph, draft } = post.data;
 const vt = `post-${post.id}`;
 ---
 <article class="card">
@@ -13,7 +14,9 @@ const vt = `post-${post.id}`;
     <div class="media">
       {cover
         ? <Image src={cover} alt="" widths={[400, 800]} sizes="(max-width: 50rem) 100vw, 50vw" style={`view-transition-name:${vt}; view-transition-class: morph`} />
-        : <CausalMotif seed={post.id} width={800} height={320} transitionName={vt} />}
+        : graph
+          ? <GraphCover graph={graph} width={760} height={304} transitionName={vt} />
+          : <CausalMotif seed={post.id} width={800} height={320} transitionName={vt} />}
       {categories[0] && <span class="chip">{categories[0]}</span>}
     </div>
     <div class="body">

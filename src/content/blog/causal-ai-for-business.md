@@ -3,6 +3,9 @@ title: "Causal AI for Business: The Quiet Revolution Changing How Companies Thin
 description: "Why companies are moving beyond correlation, and what causal AI changes about how business decisions get made."
 pubDate: 2025-08-04
 categories: ["Data Analytics"]
+graph:
+  path: ["Refund speed", "Review score"]
+  edges: [["Complaint type", "Refund speed"], ["Complaint type", "Review score"], ["Delivery experience", "Refund speed"], ["Delivery experience", "Review score"]]
 ---
 
 > Correlation does not equal causation...

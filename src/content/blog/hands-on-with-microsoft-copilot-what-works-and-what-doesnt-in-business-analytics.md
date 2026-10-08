@@ -3,6 +3,9 @@ title: "Hands-On with Microsoft Copilot: What Works (and What Doesn't) in Busine
 description: "Testing Microsoft Copilot on real data-analysis tasks during my Masters in Business Analytics: where it helps, and where it falls short."
 pubDate: 2025-07-15
 categories: ["Business Technology","Data Analytics"]
+graph:
+  path: ["Excel data", "Copilot", "Draft charts", "Analyst review"]
+  edges: [["Clear prompts", "Copilot"], ["IBCS standards", "Analyst review"]]
 ---
 
 *This post documents my hands-on experience testing Microsoft Copilot for data analysis as part of my Masters in Business Analytics coursework. For more thoughts on human-AI collaboration in analytics, see my previous post: "The Human Layer: What AI Can't Replace in Data Analytics."*

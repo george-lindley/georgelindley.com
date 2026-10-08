@@ -4,6 +4,8 @@ import type { ImageMetadata } from 'astro';
 import { Image, getImage } from 'astro:assets';
 import Base from './Base.astro';
 import CausalMotif from '../components/CausalMotif.astro';
+import GraphCover from '../components/GraphCover.astro';
+import type { GraphSpec } from '../lib/graph';
 import Icon from '../components/Icon.astro';
 import { formatDate } from '../lib/content';
 import type { Section } from '../data/site';
@@ -17,11 +19,12 @@ interface Props {
   pubDate: Date;
   categories: string[];
   cover?: ImageMetadata;
+  graph?: GraphSpec;
   minutes?: number;
   link?: string;
   back: { href: string; label: string };
 }
-const { section, seed, transitionName, title, description, pubDate, categories, cover, minutes, link, back } = Astro.props;
+const { section, seed, transitionName, title, description, pubDate, categories, cover, graph, minutes, link, back } = Astro.props;
 const ogImage = cover
   ? (await getImage({ src: cover, width: 1200, format: 'jpg' })).src
   : `/og/${section === 'blog' ? 'blog' : 'project'}/${seed}.png`; // generated at build, see pages/og/
@@ -31,7 +34,9 @@ const ogImage = cover
     <div class="banner">
       {cover
         ? <Image src={cover} alt="" widths={[800, 1200, 1800]} sizes="(max-width: 60rem) 100vw, 75vw" loading="eager" style={`view-transition-name:${transitionName}; view-transition-class: morph`} />
-        : <CausalMotif seed={seed} width={1600} height={450} transitionName={transitionName} />}
+        : graph
+          ? <GraphCover {graph} width={1600} height={450} {transitionName} />
+          : <CausalMotif seed={seed} width={1600} height={450} transitionName={transitionName} />}
     </div>
     <div class="inner">
       <header>

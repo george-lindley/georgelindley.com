@@ -1,0 +1,30 @@
+---
+// A post's cover drawn from the graph in its frontmatter: the same pills and
+// arrows as the homepage, laid out left to right to fill a banner.
+import Graph from './Graph.astro';
+import { layered, type GraphSpec } from '../lib/graph';
+
+interface Props {
+  graph: GraphSpec;
+  /** viewBox size. Labels are 13 units tall, so pick a width near the rendered pixel width. */
+  width: number;
+  height: number;
+  transitionName?: string;
+}
+const { graph, width, height, transitionName } = Astro.props;
+const { nodes, edges, controls } = layered(graph, width, height);
+---
+<Graph
+  class="graph-cover"
+  {nodes} {edges} {controls} path={graph.path}
+  title={`Causal graph: ${graph.path.join(' → ')}`}
+  viewBox={`0 0 ${width} ${height}`}
+  {transitionName}
+/>
+
+<style>
+  :global(.graph-cover) {
+    display: block; width: 100%; height: 100%;
+    background: radial-gradient(circle, #dcdcd8 1px, transparent 1.2px) 0 0 / 16px 16px, var(--tint);
+  }
+</style>

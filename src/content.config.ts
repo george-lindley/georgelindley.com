@@ -19,6 +19,11 @@ const blog = defineCollection({
       tags: z.array(z.string()).default([]),
       // Optional: by default posts get a generated cover (see CausalMotif).
       cover: image().optional(),
+      // Optional labelled cover graph (see GraphCover). Nodes are named by their
+      // labels; `path` is the highlighted chain, `edges` any other arrows.
+      graph: z
+        .object({ path: z.array(z.string()).min(2), edges: z.array(z.tuple([z.string(), z.string()])).default([]) })
+        .optional(),
       draft: z.boolean().default(false),
     }),
 });
