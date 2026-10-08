@@ -38,7 +38,7 @@ const openTo = [
   </PageShell>
 </Base>
 
-<!-- The site is otherwise script-free; copying to the clipboard is the one thing CSS can't do. -->
+<!-- Copying to the clipboard is the one interaction here CSS can't do. -->
 <script is:inline>
   for (const button of document.querySelectorAll('button[data-copy]')) {
     if (!navigator.clipboard) continue;
