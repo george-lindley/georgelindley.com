@@ -18,7 +18,7 @@ import { profile, about } from '../data/profile';
       <ul class="current">
         {about.current.map((c) => (
           <li>
-            <a href={c.href}><strong>{c.name}</strong></a>, {c.text}
+            <a class="link" href={c.href}><strong>{c.name}</strong></a>, {c.text}
           </li>
         ))}
       </ul>
@@ -26,7 +26,7 @@ import { profile, about } from '../data/profile';
         <a class="button" href="/contact/">
           <span class="with-icon">Get in touch <Icon name="arrow-right" size={16} /></span>
         </a>
-        <a class="cv with-icon" href={profile.cv} download><Icon name="download" size={16} /> Download my CV</a>
+        <a class="cv link with-icon" href={profile.cv} download><Icon name="download" size={16} /> Download my CV</a>
       </div>
     </div>
   </section>
@@ -60,12 +60,9 @@ import { profile, about } from '../data/profile';
   .current { list-style: none; margin: 0 0 2rem; padding: 0; }
   .current li { margin-bottom: 0.9rem; padding-left: 1rem; border-left: 2px solid var(--rule); }
   .current strong { color: var(--ink); font-weight: 600; }
-  .current a { text-decoration: none; }
-  .current a strong { color: var(--accent-text); }
   .with-icon { display: inline-flex; align-items: center; gap: 0.5rem; }
   .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.75rem; }
-  .cv { color: var(--accent-text); font-size: var(--step--1); font-weight: 500; text-decoration: none; }
-  .cv:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+  .cv { font-size: var(--step--1); font-weight: 500; }
 
 
   @media (max-width: 75rem) {

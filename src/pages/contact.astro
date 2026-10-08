@@ -18,7 +18,7 @@ const openTo = [
       <li>
         <Icon name="mail" size={20} class="icon" />
         <span class="label">Email</span>
-        <a href={`mailto:${profile.email}`}>{profile.email}</a>
+        <a class="link" href={`mailto:${profile.email}`}>{profile.email}</a>
         <!-- Hidden until the script below runs, so it never shows as a dead button. -->
         <button type="button" class="copy" data-copy={profile.email} hidden>
           <Icon name="copy" size={14} /><span>Copy</span>
@@ -27,7 +27,7 @@ const openTo = [
       <li>
         <Icon name="linkedin" size={20} class="icon" />
         <span class="label">LinkedIn</span>
-        <a href={linkedin.href} rel="me noopener" target="_blank">/georgelindley</a>
+        <a class="link" href={linkedin.href} rel="me noopener" target="_blank">/georgelindley</a>
       </li>
     </ul>
 
@@ -57,8 +57,7 @@ const openTo = [
   .channels li { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
   .channels :global(.icon) { color: var(--ink); }
   .label { width: 5.5rem; color: var(--muted); font-size: var(--step--1); }
-  .channels a { color: var(--accent-text); font-size: var(--step-1); text-decoration: none; overflow-wrap: anywhere; }
-  .channels a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+  .channels a { font-size: var(--step-1); overflow-wrap: anywhere; }
   .copy { display: inline-flex; align-items: center; gap: 0.35rem; margin-left: auto; padding: 0.35rem 0.7rem; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); font: inherit; font-size: 0.75rem; cursor: pointer; transition: border-color 0.2s; }
   .copy:hover { border-color: var(--accent); }
   h2 { margin: 0 0 0.75rem; font-size: var(--step-1); }
