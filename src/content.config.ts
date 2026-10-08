@@ -38,6 +38,10 @@ const projects = defineCollection({
       categories: z.array(z.string()).default([]),
       cover: image().optional(),
       link: z.url().optional(),
+      // Optional labelled cover graph, for projects with no screenshot (see GraphCover).
+      graph: z
+        .object({ path: z.array(z.string()).min(2), edges: z.array(z.tuple([z.string(), z.string()])).default([]) })
+        .optional(),
       // The portfolio card's summary. Same four parts on every card, so they scan alike.
       card: z
         .object({

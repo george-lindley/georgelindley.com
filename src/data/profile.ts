@@ -24,6 +24,11 @@ export const about = {
   ],
   current: [
     {
+      name: "Saudi Tender Intelligence",
+      href: "/project/saudi-tender-intelligence/",
+      text: "an AI bid desk I built for Pearson: it matches new Saudi government tenders to Pearson's catalogue and estimates each one's value, competition and compliance risk.",
+    },
+    {
       name: "Causal Blocks",
       href: "/project/causal-blocks-interactive-causal-inference/",
       text: "a data analytics project that makes causal reasoning visual and intuitive, using UK education data as the case-in-point for applying this methodology.",

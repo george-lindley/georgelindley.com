@@ -1,20 +1,23 @@
 ---
 import { Image } from 'astro:assets';
 import CausalMotif from './CausalMotif.astro';
+import GraphCover from './GraphCover.astro';
 import { projectUrl, type Project } from '../lib/content';
 
 interface Props { project: Project }
 const { project } = Astro.props;
-const { title, description, cover, card, draft } = project.data;
+const { title, description, cover, graph, card, draft } = project.data;
 const vt = `project-${project.id}`;
 ---
 <!-- Same frame as the blog cards: hairline border, cover on top, padded body. -->
 <article class="card">
-  <a href={projectUrl(project)}>
+  <a class="graph-host" href={projectUrl(project)}>
     <div class="media">
       {cover
         ? <Image src={cover} alt="" widths={[400, 700, 1000]} sizes="(max-width: 40rem) 100vw, 33vw" style={`view-transition-name:${vt}; view-transition-class: morph`} />
-        : <CausalMotif seed={project.id} width={640} height={300} transitionName={vt} />}
+        : graph
+          ? <GraphCover {graph} width={480} height={270} transitionName={vt} />
+          : <CausalMotif seed={project.id} width={640} height={300} transitionName={vt} />}
     </div>
     <div class="body">
       {card && <p class="role">{card.role}</p>}
