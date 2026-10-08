@@ -38,11 +38,6 @@ export const about = {
       text: "(MSc dissertation, Aston University), testing whether national procurement award data can support supplier bid decisions, and where the limits of that intelligence lie.",
     },
   ],
-  services: [
-    { icon: "branch", title: "GenAI Product Development", text: "Building AI-enabled tools that turn messy institutional workflows into usable software, dashboards and decision support." },
-    { icon: "trend", title: "Market & Growth Strategy", text: "Using sector insight, segmentation and commercial analysis to identify growth opportunities across education markets." },
-    { icon: "bulb", title: "Education & Workforce Analytics", text: "Connecting education systems, labour-market signals and institutional data to inform programme strategy and skills alignment." },
-  ],
 } as const;
 
 export const resume = {
