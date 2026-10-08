@@ -49,7 +49,8 @@ export const resume = {
       title: "Pearson: across all roles",
       org: "Pearson Middle East",
       points: [
-        "KSA revenue grew 18% a year from 2018 to 2024.",
+        "KSA revenue grew 18% a year from 2018 to 2024, helped by Academic Progress, a regional title I championed.",
+        "Global titles don't sell in KSA, so I build the case for regional editions: market research, forecasts and the pitch to senior management, then the local guidelines, USP, sales strategy and distribution.",
       ],
     },
     {
@@ -58,8 +59,8 @@ export const resume = {
       org: "Pearson Middle East",
       points: [
         "Lead commercial and growth strategy for KSA and Bahrain; have managed an account manager since 2022.",
+        "Championed 3 new schools titles for the most lucrative segments (2 in 2027, 1 in 2028), with a new bundled-solutions offer.",
         "Set up Saudi tender intelligence where Pearson had no bid desk, surfacing the 2–3 tenders a month worth acting on.",
-        "Lead the schools-market strategy: segmented the market, planned 3 new titles for the most lucrative segments (2027–28) and shifted the offer to bundled solutions.",
         "Act as solutions consultant in university technical decisions, such as LTI integration versus batch registration for digital learning platforms.",
         "Translate institutional and workforce needs into product positioning, pricing and go-to-market decisions with senior commercial, academic and product stakeholders.",
       ],
@@ -69,7 +70,7 @@ export const resume = {
       title: "Learning Consultant",
       org: "Pearson Middle East",
       points: [
-        "Led market validation for Academic Progress using regional institutional data and focus groups; it became Pearson's #1 English course in Africa, the Middle East and Turkey, 2020–2022.",
+        "Championed Academic Progress from market research to launch: institutional data, focus groups, forecasts, local guidelines and USP. It became Pearson's #1 English course in Africa, the Middle East and Turkey, 2020–2022.",
         "Led its expansion beyond KSA, into Qatar, Kuwait and the UAE.",
         "Advised regional universities on English programmes and learning outcomes, and led digital learning platform rollouts through adoption and change management.",
       ],
