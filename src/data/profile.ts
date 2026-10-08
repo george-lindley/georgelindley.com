@@ -26,7 +26,7 @@ export const about = {
     {
       name: "Saudi Tender Intelligence",
       href: "/project/saudi-tender-intelligence/",
-      text: "an AI bid desk I built for Pearson: it matches new Saudi government tenders to Pearson's catalogue and estimates each one's value, competition and compliance risk.",
+      text: "an AI bid desk I built for Pearson: a neural-network recommender ranks new Saudi government tenders by fit, and estimates each one's value, competition and compliance risk.",
     },
     {
       name: "Causal Blocks",
