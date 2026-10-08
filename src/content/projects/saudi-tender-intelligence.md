@@ -21,10 +21,15 @@ In June 2025 I started collecting the data and building a tender intelligence pi
 
 -   **Collection.** Etimad is scraped five times a day, so new tenders are picked up while there is still time to respond.
 -   **Matching.** Each tender is embedded with OpenAI embeddings and searched against Pearson's English product profile in Qdrant, a vector database. Cross-lingual retrieval matches Arabic tenders to English product descriptions without translating everything first.
+-   **Scoring.** The candidates are then ranked by a neural recommender system, described below. Its output is the fit score on each match.
 -   **Explanation.** An LLM writes the reason behind each match in plain English, so colleagues can see in seconds why a tender was flagged and decide whether to act.
 -   **Estimation.** For each recommended tender, the tool estimates its likely winning price, the number of competitors to expect and the chance of rejection on compliance, so the bid decision rests on more than a keyword match.
 
 ![Illustrative example with sample data: the intelligence panel for one tender. Under the notice details Etimad publishes, three estimates: a likely winning price of SAR 2.4 to 3.1 million, 3 to 5 likely bidders, and a 1 in 4 chance of rejection on compliance, mostly for missing local-content documents.](../../assets/uploads/2026/10/tender-intelligence.jpg)
+
+## The Recommender Behind the Scores
+
+The fit scores come from a two-tower neural network, the standard architecture for large recommender systems. One tower turns each tender into a vector from its text, agency, activity and value; the other does the same for a supplier from what it offers and what it has won before. A tender and a supplier that belong together end up close in that shared space, and the distance between them becomes the score. The model is trained on six years of Etimad awards, so it learns from what suppliers actually won rather than from keyword overlap. That makes the system two-stage, like most production recommenders: fast embedding search narrows 100 new tenders a day to a shortlist, and the recommender ranks the shortlist. It is also the part that goes beyond the dissertation, which tested what award data can predict but did not build a recommender.
 
 ## From Bid Alerts to Market Strategy
 
@@ -41,6 +46,5 @@ The estimates are built on my MSc dissertation at Aston University, *Saudi Procu
 ## Next Steps
 
 -   A multilingual embedding model, to compare against the current cross-lingual matching.
--   A neural recommendation model (a two-tower network) trained on six years of awards, to rank tenders by what similar suppliers actually won and measure the matcher's precision. This goes beyond the dissertation.
 
-**Stack:** Python, web scraping, OpenAI embeddings and LLM, Qdrant, scheduled jobs.
+**Stack:** Python, web scraping, OpenAI embeddings and LLM, Qdrant, two-tower neural recommender, scheduled jobs.
