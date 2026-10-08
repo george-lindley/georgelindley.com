@@ -3,36 +3,40 @@ import { Image } from 'astro:assets';
 import CausalMotif from './CausalMotif.astro';
 import { projectUrl, type Project } from '../lib/content';
 
-interface Props { project: Project; filterKeys?: string }
-const { project, filterKeys } = Astro.props;
-const { title, cover, categories, draft } = project.data;
+interface Props { project: Project }
+const { project } = Astro.props;
+const { title, description, cover, card, draft } = project.data;
 const vt = `project-${project.id}`;
-
-// Card thumbnails are 32:15 (~2.13:1). Images wider than that are shown whole (never trim the
-// sides of a screenshot); taller ones, like a book cover, fill the card from the top.
-const CARD_RATIO = 32 / 15;
-const fit = cover && cover.width / cover.height > CARD_RATIO ? 'contain' : 'cover';
 ---
-<article class="card" data-filter={filterKeys}>
+<!-- Same frame as the blog cards: hairline border, cover on top, padded body. -->
+<article class="card">
   <a href={projectUrl(project)}>
     <div class="media">
       {cover
-        ? <Image src={cover} alt="" widths={[400, 700, 1000]} sizes="(max-width: 40rem) 100vw, 33vw" class={fit} style={`view-transition-name:${vt}; view-transition-class: morph`} />
+        ? <Image src={cover} alt="" widths={[400, 700, 1000]} sizes="(max-width: 40rem) 100vw, 33vw" style={`view-transition-name:${vt}; view-transition-class: morph`} />
         : <CausalMotif seed={project.id} width={640} height={300} transitionName={vt} />}
     </div>
-    <h3>{title}{draft && <span class="draft">Draft</span>}</h3>
-    <p class="cats">{categories.join(', ')}</p>
+    <div class="body">
+      {card && <p class="role">{card.role}</p>}
+      <h3>{title}{draft && <span class="draft">Draft</span>}</h3>
+      <p class="desc">{card ? `${card.problem} ${card.action} ${card.outcome}` : description}</p>
+    </div>
   </a>
 </article>
 
 <style>
-  .card a { display: block; text-decoration: none; color: inherit; }
-  .media { aspect-ratio: 32 / 15; overflow: hidden; background: var(--paper); border: 1px solid var(--rule); }
-  .media :global(img), .media :global(svg) { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s var(--ease); }
-  .media :global(img.contain) { object-fit: contain; object-position: center; }
-  .card a:hover .media :global(img), .card a:hover .media :global(svg) { transform: scale(1.04); }
-  h3 { margin: 0.9rem 0 0.15rem; font-size: 1rem; transition: color 0.2s; }
+  .card a { display: flex; flex-direction: column; height: 100%; text-decoration: none; color: inherit; border: 1px solid var(--rule); background: var(--paper); transition: box-shadow 0.25s, border-color 0.25s; }
+  .card a:hover { border-color: #cfcfcb; box-shadow: 0 8px 30px rgb(0 0 0 / 0.06); }
+  /* A shared grey mount, so screenshots of different shapes and palettes read as a set.
+     Each image keeps its own proportions (never cropped) inside the inset. */
+  .media { position: relative; aspect-ratio: 16 / 9; background: var(--canvas); border-bottom: 1px solid var(--rule); }
+  /* Absolute + inset + auto margins centres the image at its own size within the padding. */
+  .media :global(img) { position: absolute; inset: 1.25rem; margin: auto; width: auto; height: auto; max-width: calc(100% - 2.5rem); max-height: calc(100% - 2.5rem); border: 1px solid var(--rule); background: var(--paper); }
+  .media :global(svg) { width: 100%; height: 100%; }
+  .body { padding: 1.1rem 1.4rem 1.4rem; }
+  .role { margin: 0 0 0.35rem; color: var(--muted); font-size: 0.75rem; }
+  h3 { margin: 0 0 0.5rem; font-size: var(--step-1); line-height: 1.3; transition: color 0.2s; }
   .card a:hover h3 { color: var(--accent-text); }
-  .cats { margin: 0; color: var(--muted); font-size: 0.75rem; }
+  .desc { margin: 0; font-size: 0.8125rem; line-height: 1.7; }
   .draft { margin-left: 0.5rem; padding: 0.05em 0.45em; background: var(--canvas); color: var(--muted); font-size: 0.6875rem; font-weight: 500; vertical-align: middle; }
 </style>

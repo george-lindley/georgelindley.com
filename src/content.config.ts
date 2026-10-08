@@ -38,6 +38,15 @@ const projects = defineCollection({
       categories: z.array(z.string()).default([]),
       cover: image().optional(),
       link: z.url().optional(),
+      // The portfolio card's summary. Same four parts on every card, so they scan alike.
+      card: z
+        .object({
+          role: z.string(), // "Role · tools", one muted line
+          problem: z.string(), // one sentence
+          action: z.string(), // what I did, one or two sentences
+          outcome: z.string(), // result, or who uses it, one sentence
+        })
+        .optional(),
       draft: z.boolean().default(false),
     }),
 });

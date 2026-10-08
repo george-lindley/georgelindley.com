@@ -5,6 +5,11 @@ pubDate: 2025-04-02
 categories: ["Analytics","Data Visualisation"]
 link: "https://regulatedplants.unu.edu"
 cover: "../../assets/uploads/2025/04/regulated-plants-cover.jpg"
+card:
+  role: "Data consultant & developer · with UNU-INWEH and UC Davis"
+  problem: "Invasive plant regulations were scattered across 104 jurisdictions, with no shared format."
+  action: "I centralised, cleaned and mapped them into one public database of 2,192 taxa, and built the web app."
+  outcome: "Hosted by United Nations University and presented at the Dresden Nexus Conference 2025."
 ---
 
 **Published with United Nations University (UNU-INWEH) and the UC Davis Department of Plant Sciences**, the Regulated Plants Database is a public reference catalogue of regulated invasive plants and noxious weeds: **2,192 taxa across 104 jurisdictions**. It is hosted at [regulatedplants.unu.edu](https://regulatedplants.unu.edu), featured in UNU's Sustainability Nexus AID Tools collection, and was presented at the Dresden Nexus Conference 2025.

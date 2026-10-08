@@ -5,6 +5,11 @@ pubDate: 2026-09-29
 categories: ["Analytics","Data Visualisation"]
 link: "https://causalblocks.com"
 cover: "../../assets/uploads/2026/09/causal-blocks-cover.jpg"
+card:
+  role: "Designer & developer · Python, DoWhy, JavaScript"
+  problem: "Causal reasoning is powerful but hard to explain to anyone who isn't a specialist."
+  action: "Causal Blocks lets people draw a causal graph over real UK education data and watch the estimate update with every arrow."
+  outcome: "It shows why the naive reading of \"small towns score better\" is wrong."
 ---
 
 ## Solution Overview

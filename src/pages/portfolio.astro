@@ -5,56 +5,19 @@ import ProjectCard from '../components/ProjectCard.astro';
 import { getProjects } from '../lib/content';
 
 const projects = await getProjects();
-const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-
-// Filters: every category used by a visible project, most common first.
-const counts = new Map<string, number>();
-projects.flatMap((p) => p.data.categories).forEach((c) => counts.set(c, (counts.get(c) ?? 0) + 1));
-const categories = [...counts.keys()].sort((a, b) => counts.get(b)! - counts.get(a)! || a.localeCompare(b));
-
-// CSS-only filtering: when a category's radio is checked, hide cards that don't carry it.
-const rules = categories
-  .map((c) => `.portfolio:has(#f-${slug(c)}:checked) .card:not([data-filter~="${slug(c)}"]) { display: none; }`)
-  .join('\n');
+const lead = 'Selected projects in analytics, data visualisation and product strategy.';
 ---
-<Base title="Portfolio" section="portfolio" description="Selected analytics, data visualisation and product development projects.">
-  <PageShell title="Portfolio">
-    <div class="portfolio">
-      <style is:inline set:html={rules}></style>
-      <fieldset class="filters">
-        <legend class="visually-hidden">Filter projects by category</legend>
-        <input type="radio" name="filter" id="f-all" checked />
-        <label for="f-all">All</label>
-        {categories.map((c) => (
-          <>
-            <input type="radio" name="filter" id={`f-${slug(c)}`} />
-            <label for={`f-${slug(c)}`}>{c}</label>
-          </>
-        ))}
-      </fieldset>
-      <div class="grid">
-        {projects.map((p) => <ProjectCard project={p} filterKeys={p.data.categories.map(slug).join(' ')} />)}
-      </div>
+<Base title="Portfolio" section="portfolio" description={lead}>
+  <PageShell title="Portfolio" {lead}>
+    <div class="grid">
+      {projects.map((p) => <ProjectCard project={p} />)}
     </div>
   </PageShell>
 </Base>
 
 <style>
-  .filters { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.25rem; margin: -1rem 0 2rem; padding: 0; border: 0; }
-  .filters input { position: absolute; opacity: 0; pointer-events: none; }
-  .filters label {
-    padding: 0.3rem 0.8rem;
-    border: 2px solid transparent;
-    color: var(--muted);
-    font-size: 0.75rem;
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .filters label:hover { border-color: var(--rule); color: var(--ink); }
-  .filters input:checked + label { border-color: var(--accent); color: var(--ink); }
-  .filters input:focus-visible + label { outline: 2px solid var(--accent); outline-offset: 2px; }
   /* Fixed column counts (not auto-fill) so a row of projects always spans the full width. */
-  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem 1.75rem; }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
   @media (max-width: 75rem) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 40rem) { .grid { grid-template-columns: 1fr; } }
 </style>

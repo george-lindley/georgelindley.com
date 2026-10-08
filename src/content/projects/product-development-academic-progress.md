@@ -3,7 +3,12 @@ title: "Market-Driven Product Strategy in a Regulated Education Ecosystem"
 description: "Market validation for Pearson's Academic Progress series, which became its best-selling English course across Africa, the Middle East and Turkey."
 pubDate: 2022-08-28
 categories: ["Product Development"]
-cover: "../../assets/uploads/2022/08/academic-progress-cover.jpg"
+cover: "../../assets/uploads/2022/08/ap_l3_page.jpeg"
+card:
+  role: "Learning consultant · Pearson Middle East"
+  problem: "Pearson needed an English series for Gulf preparatory-year programmes, where 55% of revenue ran on split-skills courses."
+  action: "Market data and focus groups led us to adapt an existing global title rather than build from scratch: keep the split-skills structure, add STEM depth, local topics and two lower levels."
+  outcome: "Pearson's best-selling English course in Africa, the Middle East and Turkey, 2020–2022."
 ---
 
 Designing and Scaling a Curriculum-Aligned English Programme for the Middle East

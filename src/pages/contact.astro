@@ -5,33 +5,64 @@ import Icon from '../components/Icon.astro';
 import { profile } from '../data/profile';
 
 const linkedin = profile.social.find((s) => s.icon === 'linkedin')!;
-const blocks = [
-  { icon: 'map-pin', title: 'Currently in', value: profile.location },
-  { icon: 'mail', title: 'Send an email', value: profile.email, href: `mailto:${profile.email}` },
-  { icon: 'linkedin', title: 'Connect on LinkedIn', value: '/georgelindley', href: linkedin.href },
-] as const;
+const openTo = [
+  'Advisory on education data and AI products',
+  'Analytics and AI product roles, in Riyadh or remote',
+  'Research collaboration on causal methods',
+  'Speaking and workshops',
+];
 ---
 <Base title="Contact" section="contact" description={`Get in touch with ${profile.name}.`}>
-  <PageShell title="Contact" lead="The fastest way to reach me is email or LinkedIn. I usually reply within a couple of days.">
-    <ul class="blocks">
-      {blocks.map((b) => (
-        <li>
-          <Icon name={b.icon} size={30} class="icon" />
-          <h2>{b.title}</h2>
-          {'href' in b
-            ? <a href={b.href} rel={b.icon === 'linkedin' ? 'me noopener' : undefined} target={b.icon === 'linkedin' ? '_blank' : undefined}>{b.value}</a>
-            : <p>{b.value}</p>}
-        </li>
-      ))}
+  <PageShell title="Contact" lead="Based in Riyadh (GMT+3). The fastest way to reach me is email or LinkedIn. I usually reply within a couple of days.">
+    <ul class="channels">
+      <li>
+        <Icon name="mail" size={20} class="icon" />
+        <span class="label">Email</span>
+        <a href={`mailto:${profile.email}`}>{profile.email}</a>
+        <!-- Hidden until the script below runs, so it never shows as a dead button. -->
+        <button type="button" class="copy" data-copy={profile.email} hidden>
+          <Icon name="copy" size={14} /><span>Copy</span>
+        </button>
+      </li>
+      <li>
+        <Icon name="linkedin" size={20} class="icon" />
+        <span class="label">LinkedIn</span>
+        <a href={linkedin.href} rel="me noopener" target="_blank">/georgelindley</a>
+      </li>
+    </ul>
+
+    <h2>Open to</h2>
+    <ul class="open">
+      {openTo.map((item) => <li>{item}</li>)}
     </ul>
   </PageShell>
 </Base>
 
+<!-- The site is otherwise script-free; copying to the clipboard is the one thing CSS can't do. -->
+<script is:inline>
+  for (const button of document.querySelectorAll('button[data-copy]')) {
+    if (!navigator.clipboard) continue;
+    button.hidden = false;
+    const label = button.querySelector('span');
+    button.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(button.dataset.copy);
+      label.textContent = 'Copied';
+      setTimeout(() => (label.textContent = 'Copy'), 2000);
+    });
+  }
+</script>
+
 <style>
-  .blocks { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
-  .blocks li { display: grid; justify-items: center; gap: 0.3rem; padding: 2rem 1.25rem; border: 1px solid var(--rule); text-align: center; }
-  .blocks :global(.icon) { color: #b5b5b2; margin-bottom: 0.5rem; }
-  h2 { margin: 0; font-size: 0.9375rem; }
-  .blocks a, .blocks p { margin: 0; color: var(--accent-text); font-size: var(--step-1); overflow-wrap: anywhere; text-decoration: none; }
-  .blocks a:hover { text-decoration: underline; }
+  .channels { max-width: var(--measure); margin: 0 0 3rem; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+  .channels li { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+  .channels :global(.icon) { color: var(--ink); }
+  .label { width: 5.5rem; color: var(--muted); font-size: var(--step--1); }
+  .channels a { color: var(--accent-text); font-size: var(--step-1); text-decoration: none; overflow-wrap: anywhere; }
+  .channels a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+  .copy { display: inline-flex; align-items: center; gap: 0.35rem; margin-left: auto; padding: 0.35rem 0.7rem; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); font: inherit; font-size: 0.75rem; cursor: pointer; transition: border-color 0.2s; }
+  .copy:hover { border-color: var(--accent); }
+  h2 { margin: 0 0 0.75rem; font-size: var(--step-1); }
+  .open { max-width: var(--measure); margin: 0; padding-left: 1.1rem; }
+  .open li { margin-bottom: 0.35rem; }
+  .open li::marker { color: var(--muted); }
 </style>
