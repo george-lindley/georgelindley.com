@@ -54,13 +54,10 @@ a:hover { text-decoration-color: var(--accent); }
 /* ---------------------------------------------------------------------------
    Shared building blocks
    --------------------------------------------------------------------------- */
-/* Section heading with the short accent underline (theme's "block title") */
+/* Section heading. No orange underline: an orange underline means "link". */
 .block-title {
-  display: inline-block;
   font-size: var(--step-2);
   margin: 0 0 1.25rem;
-  padding-bottom: 0.2rem;
-  border-bottom: 2px solid var(--accent);
 }
 
 .button {
