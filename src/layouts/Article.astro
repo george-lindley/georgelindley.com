@@ -30,12 +30,17 @@ const { section, seed, transitionName, title, description, pubDate, categories, 
 const ogImage = cover
   ? (await getImage({ src: cover, width: 1200, format: 'jpg' })).src
   : `/og/${section === 'blog' ? 'blog' : 'project'}/${seed}.png`; // generated at build, see pages/og/
+// A wide banner image is cropped to nothing on a phone, so phones get the cover instead.
+const phoneCover = banner && cover ? (await getImage({ src: cover, width: 800 })).src : undefined;
 ---
 <Base title={title} description={description} section={section} image={ogImage} type="article">
   <article>
     <div class="banner">
       {cover
-        ? <Image src={banner ?? cover} alt="" widths={[800, 1200, 1800]} sizes="(max-width: 60rem) 100vw, 75vw" loading="eager" style={`view-transition-name:${transitionName}; view-transition-class: morph`} />
+        ? <picture>
+            {phoneCover && <source media="(max-width: 40rem)" srcset={phoneCover} />}
+            <Image src={banner ?? cover} alt="" widths={[800, 1200, 1800]} sizes="(max-width: 60rem) 100vw, 75vw" loading="eager" style={`view-transition-name:${transitionName}; view-transition-class: morph`} />
+          </picture>
         : graph
           ? <GraphCover {graph} width={1600} height={450} {transitionName} />
           : <CausalMotif seed={seed} width={1600} height={450} transitionName={transitionName} />}
@@ -76,5 +81,11 @@ const ogImage = cover
   h1 { margin: 1rem 0 0.75rem; font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem); line-height: 1.2; letter-spacing: -0.01em; }
   .meta { margin: 0; }
   .live { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.25rem; }
-  @media (max-width: 40rem) { .banner { aspect-ratio: 16 / 7; } }
+  .banner :global(picture) { display: contents; }
+  @media (max-width: 40rem) {
+    .banner { aspect-ratio: 16 / 7; }
+    /* Screenshots are shown whole on phones (at their own shape, capped in height) rather than cropped. */
+    .banner:has(img) { aspect-ratio: auto; }
+    .banner :global(img) { height: auto; max-height: 75vw; }
+  }
 </style>
