@@ -61,8 +61,7 @@ export function layered({ path, edges = [] }: GraphSpec, width: number, height: 
 
   const edgeOf = (l: number) => Math.max(...column(l).map((id) => pill(id).hw)) + 12;
   const left = edgeOf(0), right = width - edgeOf(columns - 1);
-  // Leave room at the top for a category chip over the cover.
-  const top = height * 0.2 + 18, bottom = height * 0.9 - 18;
+  const top = height * 0.12 + 18, bottom = height * 0.88 - 18;
   const nodes: GraphNode[] = [];
   for (let l = 0; l < columns; l++) {
     const members = column(l);

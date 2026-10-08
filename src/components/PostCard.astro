@@ -6,18 +6,17 @@ import { postUrl, formatDate, readingMinutes, type Post } from '../lib/content';
 
 interface Props { post: Post }
 const { post } = Astro.props;
-const { title, description, pubDate, categories, cover, graph, draft } = post.data;
+const { title, description, pubDate, cover, graph, draft } = post.data;
 const vt = `post-${post.id}`;
 ---
 <article class="card">
-  <a href={postUrl(post)}>
+  <a class="graph-host" href={postUrl(post)}>
     <div class="media">
       {cover
         ? <Image src={cover} alt="" widths={[400, 800]} sizes="(max-width: 50rem) 100vw, 50vw" style={`view-transition-name:${vt}; view-transition-class: morph`} />
         : graph
-          ? <GraphCover graph={graph} width={760} height={304} transitionName={vt} />
+          ? <GraphCover graph={graph} width={760} height={270} transitionName={vt} />
           : <CausalMotif seed={post.id} width={800} height={320} transitionName={vt} />}
-      {categories[0] && <span class="chip">{categories[0]}</span>}
     </div>
     <div class="body">
       <p class="meta">
@@ -31,14 +30,13 @@ const vt = `post-${post.id}`;
 </article>
 
 <style>
-  .card a { display: flex; flex-direction: column; height: 100%; text-decoration: none; color: inherit; border: 1px solid var(--rule); background: var(--paper); transition: box-shadow 0.25s; }
-  .card a:hover { box-shadow: 0 8px 30px rgb(0 0 0 / 0.06); }
-  .media { position: relative; aspect-ratio: 5 / 2; overflow: hidden; border-bottom: 1px solid var(--rule); }
+  .card a { display: flex; flex-direction: column; height: 100%; text-decoration: none; color: inherit; border: 1px solid var(--rule); background: var(--paper); transition: box-shadow 0.25s, border-color 0.25s; }
+  .card a:hover { border-color: #cfcfcb; box-shadow: 0 8px 30px rgb(0 0 0 / 0.06); }
+  .media { position: relative; aspect-ratio: 76 / 27; /* matches the cover's viewBox: ~240px tall in the two-column grid */ overflow: hidden; border-bottom: 1px solid var(--rule); }
   .media :global(img), .media :global(svg) { width: 100%; height: 100%; object-fit: cover; }
-  .chip { position: absolute; top: 0.75rem; left: 0.75rem; border: 1px solid var(--rule); }
   .body { padding: 1.1rem 1.4rem 1.4rem; }
   .meta { margin: 0 0 0.35rem; font-size: 0.75rem; }
-  h3 { margin: 0 0 0.5rem; font-size: var(--step-1); transition: color 0.2s; }
+  h3 { margin: 0 0 0.5rem; font-size: var(--step-2); line-height: 1.3; transition: color 0.2s; }
   .card a:hover h3 { color: var(--accent-text); }
   .desc { margin: 0; font-size: 0.8125rem; line-height: 1.7; }
   .draft { margin-left: 0.5rem; padding: 0.05em 0.45em; background: var(--canvas); font-weight: 500; }

@@ -1,11 +1,11 @@
 ---
-title: "The Human Layer: What AI Can't Replace in Data Analytics"
+title: "The human layer: what AI can't replace in data analytics"
 description: "Reflections from real analytics projects and my Masters on the parts of data analytics that still need a human."
 pubDate: 2025-07-14
 categories: ["Business Technology","Data Analytics"]
 graph:
-  path: ["Scattered regulations", "Human curation", "Curated database", "Public web app"]
-  edges: [["AI-written code", "Public web app"], ["UNU and UC Davis trust", "Public web app"]]
+  path: ["Human curation", "Curated database", "Public web app"]
+  edges: [["Scattered regulations", "Human curation"], ["AI-written code", "Public web app"], ["UNU and UC Davis trust", "Public web app"]]
 ---
 
 *This post is a reflection on the data analytics projects I've been involved in, as well as my Masters in Business Analytics. You can view the published projects in my portfolio at: www.georgelindley.com/portfolio.*

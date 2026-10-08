@@ -1,5 +1,5 @@
 ---
-title: "Causal AI for Business: The Quiet Revolution Changing How Companies Think"
+title: "Causal AI for business: the quiet revolution changing how companies think"
 description: "Why companies are moving beyond correlation, and what causal AI changes about how business decisions get made."
 pubDate: 2025-08-04
 categories: ["Data Analytics"]
