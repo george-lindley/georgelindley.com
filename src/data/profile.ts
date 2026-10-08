@@ -58,7 +58,8 @@ export const resume = {
       org: "Pearson Middle East",
       points: [
         "Lead commercial and growth strategy for KSA and Bahrain; have managed an account manager since 2022.",
-        "Since 2025, looking for the next anchor market beyond the existing product range: set up Saudi tender intelligence where Pearson had no bid desk: scraping Etimad five times a day (about 100 new tenders a day, 50,000 a year), matching Arabic tenders against Pearson's English profile, and surfacing the 2–3 a month worth acting on. Briefed senior management on a year of this evidence to inform strategy in KSA.",
+        "Set up Saudi tender intelligence where Pearson had no bid desk, surfacing the 2–3 tenders a month worth acting on.",
+        "Led the move into the schools market: scoped the sector and launched 3 new titles in previously untapped school segments.",
         "Act as solutions consultant in university technical decisions, such as LTI integration versus batch registration for digital learning platforms.",
         "Translate institutional and workforce needs into product positioning, pricing and go-to-market decisions with senior commercial, academic and product stakeholders.",
       ],
