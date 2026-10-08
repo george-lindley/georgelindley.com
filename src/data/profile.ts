@@ -49,8 +49,7 @@ export const resume = {
       title: "Pearson: across all roles",
       org: "Pearson Middle East",
       points: [
-        "KSA revenue grew 18% a year from 2018 to 2024.",
-        "Grew the anchor university account about 50% a year from 2017 to 2022, with price per course up 70% after the move to blended digital courseware.",
+        "KSA revenue grew 18% a year from 2018 to 2024, anchored by one university account.",
       ],
     },
     {
@@ -59,7 +58,7 @@ export const resume = {
       org: "Pearson Middle East",
       points: [
         "Lead commercial and growth strategy for KSA and Bahrain; have managed an account manager since 2022.",
-        "To find revenue beyond the existing product range, set up Saudi tender intelligence where Pearson had no bid desk: scraping Etimad five times a day (about 100 new tenders a day, 50,000 a year), matching Arabic tenders against Pearson's English profile, and surfacing the 2–3 a month worth acting on. Briefed senior management on a year of this evidence to inform strategy in KSA.",
+        "Since 2025, looking for the next anchor market beyond the existing product range: set up Saudi tender intelligence where Pearson had no bid desk: scraping Etimad five times a day (about 100 new tenders a day, 50,000 a year), matching Arabic tenders against Pearson's English profile, and surfacing the 2–3 a month worth acting on. Briefed senior management on a year of this evidence to inform strategy in KSA.",
         "Act as solutions consultant in university technical decisions, such as LTI integration versus batch registration for digital learning platforms.",
         "Translate institutional and workforce needs into product positioning, pricing and go-to-market decisions with senior commercial, academic and product stakeholders.",
       ],
