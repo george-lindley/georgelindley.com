@@ -17,8 +17,6 @@ Saudi government procurement runs through Etimad, the national tendering platfor
 
 In June 2025 I started collecting the data and building a tender intelligence pipeline to answer both questions: which tenders should Pearson bid for this week, and what does the public education market look like as a whole.
 
-![Illustrative example with sample data: a ranked list of new education tenders. A preparatory-year English courseware tender scores 92%, a strong fit; digital English platform licences for intermediate schools 84%, a strong fit; and a teacher-training programme 58%, a partial fit that needs a local delivery partner. Each match has a one-line reason.](../../assets/uploads/2026/10/tender-matches.jpg)
-
 ## How It Works
 
 -   **Collection.** Etimad is scraped five times a day, so new tenders are picked up while there is still time to respond.
