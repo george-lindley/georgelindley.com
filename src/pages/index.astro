@@ -32,14 +32,15 @@ import { profile, about } from '../data/profile';
 </Base>
 
 <style>
-  /* Two rows: the first is as tall as the intro, the second soaks up the rest
-     of the screen. The graph fills row one exactly, so its first and last nodes
-     line up with the headline and the CV button; the dotted panel spans both. */
+  /* Three rows: the middle one is as tall as the intro, and the outer two share
+     the leftover screen so the block sits just above centre (optical centre).
+     The graph fills the middle row exactly, so its first and last nodes line up
+     with the headline and the CV button; the dotted panel spans all three. */
   .hero {
-    --edge: 2.5rem; /* matches the sidebar's top padding, so the portrait shares the top line */
+    --edge: 2.5rem;
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    grid-template-rows: auto 1fr;
+    grid-template-rows: 1fr auto 1.4fr;
     min-height: 100dvh;
   }
   .hero::before {
@@ -48,10 +49,10 @@ import { profile, about } from '../data/profile';
     background: radial-gradient(circle, #dcdcd8 1px, transparent 1.2px) 0 0 / 16px 16px, var(--tint);
     border-right: 1px solid var(--rule);
   }
-  .art { grid-area: 1 / 1; position: relative; }
+  .art { grid-area: 2 / 1; position: relative; }
   /* Absolute, so the graph takes the intro's height rather than adding to it. */
   .art :global(svg) { position: absolute; inset: var(--edge) 2rem; height: calc(100% - 2 * var(--edge)); max-width: 30rem; margin-inline: auto; }
-  .intro { grid-area: 1 / 2; max-width: 44rem; padding: var(--edge) var(--gutter); }
+  .intro { grid-area: 2 / 2; max-width: 44rem; padding: var(--edge) var(--gutter); }
   /* Pull the line box up by its leading so the capitals, not the box, sit on the top line. */
   h1 { font-size: var(--step-4); line-height: 1.1; margin: -0.17em 0 1.5rem; letter-spacing: -0.01em; }
   .current { list-style: none; margin: 0 0 2rem; padding: 0; }
