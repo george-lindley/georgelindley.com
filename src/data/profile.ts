@@ -49,7 +49,7 @@ export const resume = {
       title: "Pearson: across all roles",
       org: "Pearson Middle East",
       points: [
-        "KSA revenue grew 18% a year from 2018 to 2024, anchored by one university account.",
+        "KSA revenue grew 18% a year from 2018 to 2024.",
       ],
     },
     {
