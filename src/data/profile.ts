@@ -59,7 +59,7 @@ export const resume = {
       points: [
         "Lead commercial and growth strategy for KSA and Bahrain; have managed an account manager since 2022.",
         "Set up Saudi tender intelligence where Pearson had no bid desk, surfacing the 2–3 tenders a month worth acting on.",
-        "Led the move into the schools market: scoped the sector and launched 3 new titles in previously untapped school segments.",
+        "Lead the schools-market strategy: segmented the market, planned 3 new titles for the most lucrative segments (2027–28) and shifted the offer to bundled solutions.",
         "Act as solutions consultant in university technical decisions, such as LTI integration versus batch registration for digital learning platforms.",
         "Translate institutional and workforce needs into product positioning, pricing and go-to-market decisions with senior commercial, academic and product stakeholders.",
       ],
