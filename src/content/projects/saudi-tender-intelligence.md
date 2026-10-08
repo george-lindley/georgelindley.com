@@ -4,6 +4,7 @@ description: "AI matching of Saudi government tenders for Pearson, with estimate
 pubDate: 2026-10-08
 categories: ["Analytics","AI"]
 cover: "../../assets/uploads/2026/10/tender-matches.jpg"
+banner: "../../assets/uploads/2026/10/tender-matches-banner.jpg"
 card:
   role: "Self-initiated, Pearson KSA · Python, OpenAI, Qdrant"
   problem: "Pearson had no bid desk in Saudi Arabia, and about 100 government tenders are published every day, in Arabic."

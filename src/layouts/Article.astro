@@ -19,12 +19,14 @@ interface Props {
   pubDate: Date;
   categories: string[];
   cover?: ImageMetadata;
+  /** Optional banner-shaped (32:9) image, when the cover would crop badly. */
+  banner?: ImageMetadata;
   graph?: GraphSpec;
   minutes?: number;
   link?: string;
   back: { href: string; label: string };
 }
-const { section, seed, transitionName, title, description, pubDate, categories, cover, graph, minutes, link, back } = Astro.props;
+const { section, seed, transitionName, title, description, pubDate, categories, cover, banner, graph, minutes, link, back } = Astro.props;
 const ogImage = cover
   ? (await getImage({ src: cover, width: 1200, format: 'jpg' })).src
   : `/og/${section === 'blog' ? 'blog' : 'project'}/${seed}.png`; // generated at build, see pages/og/
@@ -33,7 +35,7 @@ const ogImage = cover
   <article>
     <div class="banner">
       {cover
-        ? <Image src={cover} alt="" widths={[800, 1200, 1800]} sizes="(max-width: 60rem) 100vw, 75vw" loading="eager" style={`view-transition-name:${transitionName}; view-transition-class: morph`} />
+        ? <Image src={banner ?? cover} alt="" widths={[800, 1200, 1800]} sizes="(max-width: 60rem) 100vw, 75vw" loading="eager" style={`view-transition-name:${transitionName}; view-transition-class: morph`} />
         : graph
           ? <GraphCover {graph} width={1600} height={450} {transitionName} />
           : <CausalMotif seed={seed} width={1600} height={450} transitionName={transitionName} />}
@@ -63,10 +65,7 @@ const ogImage = cover
 
 <style>
   .banner { aspect-ratio: 32 / 9; overflow: hidden; background: var(--tint); border-bottom: 1px solid var(--rule); }
-  .banner :global(svg) { width: 100%; height: 100%; }
-  /* Cover images sit whole on a grey mount, like the portfolio cards: never cropped. */
-  .banner:has(img) { position: relative; background: var(--canvas); }
-  .banner :global(img) { position: absolute; inset: 1.5rem; margin: auto; width: auto; height: auto; max-width: calc(100% - 3rem); max-height: calc(100% - 3rem); border: 1px solid var(--rule); background: var(--paper); }
+  .banner :global(img), .banner :global(svg) { width: 100%; height: 100%; object-fit: cover; object-position: top; }
   .inner { padding: 2.5rem var(--gutter) 5rem; }
   /* Centre the reading column (and anything after it) in the content area. */
   .inner > :global(*) { max-width: var(--measure); margin-inline: auto; }

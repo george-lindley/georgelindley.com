@@ -37,6 +37,8 @@ const projects = defineCollection({
       pubDate: z.coerce.date(),
       categories: z.array(z.string()).default([]),
       cover: image().optional(),
+      // Optional 32:9 image for the project page banner, when the cover would crop badly.
+      banner: image().optional(),
       link: z.url().optional(),
       // Optional labelled cover graph, for projects with no screenshot (see GraphCover).
       graph: z
