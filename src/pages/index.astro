@@ -23,9 +23,12 @@ import { profile, about } from '../data/profile';
           </li>
         ))}
       </ul>
-      <a class="button" href={profile.cv} download>
-        <span class="with-icon"><Icon name="download" size={16} /> Download my CV</span>
-      </a>
+      <div class="actions">
+        <a class="button primary" href="/contact/">
+          <span class="with-icon">Get in touch <Icon name="arrow-right" size={16} /></span>
+        </a>
+        <a class="cv with-icon" href={profile.cv} download><Icon name="download" size={16} /> Download my CV</a>
+      </div>
     </div>
   </section>
 
@@ -61,6 +64,9 @@ import { profile, about } from '../data/profile';
   .current a { text-decoration: none; }
   .current a strong { color: var(--accent-text); }
   .with-icon { display: inline-flex; align-items: center; gap: 0.5rem; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.75rem; }
+  .cv { color: var(--accent-text); font-size: var(--step--1); font-weight: 500; text-decoration: none; }
+  .cv:hover { text-decoration: underline; text-underline-offset: 0.2em; }
 
 
   @media (max-width: 75rem) {

@@ -74,6 +74,9 @@ a:hover { color: var(--accent-text); }
   transition: background-color 0.2s, color 0.2s;
 }
 .button:hover { background: var(--accent); color: #fff; }
+/* The one action a page most wants: filled. Dark text on orange keeps ~7.6:1 contrast. */
+.button.primary { background: var(--accent); }
+.button.primary:hover { background: var(--accent-text); border-color: var(--accent-text); }
 
 .chip {
   display: inline-block;
