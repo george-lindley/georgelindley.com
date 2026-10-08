@@ -1,15 +1,15 @@
 ---
 // The About hero: a labelled causal graph of what George works on.
 // Edges draw themselves in once on load (CSS only), highlighted path in accent.
-const W = 480, H = 620;
+const W = 480;
 type N = { id: string; label: string; x: number; y: number; hot?: boolean };
 const nodes: N[] = [
   { id: 'edu', label: 'Education data', x: 130, y: 90, hot: true },
-  { id: 'labour', label: 'Labour-market signals', x: 330, y: 150 },
-  { id: 'analytics', label: 'Analytics', x: 200, y: 260, hot: true },
-  { id: 'sector', label: 'Sector insight', x: 360, y: 350 },
-  { id: 'genai', label: 'GenAI products', x: 170, y: 420, hot: true },
-  { id: 'decisions', label: 'Better decisions', x: 270, y: 540, hot: true },
+  { id: 'labour', label: 'Labour-market signals', x: 330, y: 177 },
+  { id: 'analytics', label: 'Analytics', x: 200, y: 337, hot: true },
+  { id: 'sector', label: 'Sector insight', x: 360, y: 467 },
+  { id: 'genai', label: 'GenAI products', x: 170, y: 569, hot: true },
+  { id: 'decisions', label: 'Better decisions', x: 270, y: 743, hot: true },
 ];
 const edges: [string, string][] = [
   ['edu', 'analytics'],
@@ -21,6 +21,11 @@ const edges: [string, string][] = [
 ];
 const byId = Object.fromEntries(nodes.map((n) => [n.id, n]));
 const size = (n: N) => ({ hw: n.label.length * 3.9 + 18, hh: 18 });
+
+// Crop the frame to the pills, so the drawing's top and bottom edges are the
+// first and last node. The page can then align them with the text beside it.
+const top = Math.min(...nodes.map((n) => n.y - size(n).hh)) - 1;
+const bottom = Math.max(...nodes.map((n) => n.y + size(n).hh)) + 1;
 
 // Clip a centre-to-centre line to the pill outlines so arrows touch the edge.
 function clip(a: N, b: N) {
@@ -34,7 +39,7 @@ const lines = edges.map(([from, to], i) => {
   return { ...clip(a, b), hot: a.hot && b.hot, i };
 });
 ---
-<svg class="graph" viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby="graph-title">
+<svg class="graph" viewBox={`0 ${top} ${W} ${bottom - top}`} preserveAspectRatio="xMidYMin meet" role="img" aria-labelledby="graph-title">
   <title id="graph-title">Education data and labour-market signals feed analytics, which powers GenAI products and better decisions.</title>
   {lines.map((l) => (
     <g class:list={['edge', { hot: l.hot }]} style={`--i:${l.i}`}>

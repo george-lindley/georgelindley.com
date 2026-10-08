@@ -32,21 +32,28 @@ import { profile, about } from '../data/profile';
 </Base>
 
 <style>
+  /* Two rows: the first is as tall as the intro, the second soaks up the rest
+     of the screen. The graph fills row one exactly, so its first and last nodes
+     line up with the headline and the CV button; the dotted panel spans both. */
   .hero {
+    --edge: 2.5rem; /* matches the sidebar's top padding, so the portrait shares the top line */
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-rows: auto 1fr;
     min-height: 100dvh;
   }
-  .art {
-    display: grid;
-    place-items: center;
-    padding: 2rem;
+  .hero::before {
+    content: '';
+    grid-area: 1 / 1 / -1 / 2;
     background: radial-gradient(circle, #dcdcd8 1px, transparent 1.2px) 0 0 / 16px 16px, var(--tint);
     border-right: 1px solid var(--rule);
   }
-  .art :global(svg) { max-width: 30rem; max-height: 44rem; }
-  .intro { align-self: center; max-width: 44rem; padding: 2.5rem var(--gutter); }
-  h1 { font-size: var(--step-4); line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.01em; }
+  .art { grid-area: 1 / 1; position: relative; }
+  /* Absolute, so the graph takes the intro's height rather than adding to it. */
+  .art :global(svg) { position: absolute; inset: var(--edge) 2rem; height: calc(100% - 2 * var(--edge)); max-width: 30rem; margin-inline: auto; }
+  .intro { grid-area: 1 / 2; max-width: 44rem; padding: var(--edge) var(--gutter); }
+  /* Pull the line box up by its leading so the capitals, not the box, sit on the top line. */
+  h1 { font-size: var(--step-4); line-height: 1.1; margin: -0.17em 0 1.5rem; letter-spacing: -0.01em; }
   .current { list-style: none; margin: 0 0 2rem; padding: 0; }
   .current li { margin-bottom: 0.9rem; padding-left: 1rem; border-left: 2px solid var(--rule); }
   .current strong { color: var(--ink); font-weight: 600; }
@@ -56,10 +63,16 @@ import { profile, about } from '../data/profile';
 
 
   @media (max-width: 75rem) {
-    .hero { grid-template-columns: 1fr; min-height: 0; }
+    .hero { grid-template-columns: 1fr; grid-template-rows: auto; min-height: 0; }
+    .hero::before { display: none; }
     /* Headline first on small screens; the graph follows as illustration. */
-    .art { order: 2; border-right: 0; border-top: 1px solid var(--rule); padding: 2rem 1rem; }
-    .art :global(svg) { max-height: 24rem; }
-    .intro { padding: 2rem var(--gutter) 2.5rem; }
+    .intro { grid-area: 1 / 1; padding: 2rem var(--gutter) 2.5rem; }
+    .art {
+      grid-area: 2 / 1;
+      padding: 2rem 1rem;
+      background: radial-gradient(circle, #dcdcd8 1px, transparent 1.2px) 0 0 / 16px 16px, var(--tint);
+      border-top: 1px solid var(--rule);
+    }
+    .art :global(svg) { position: static; display: block; height: auto; max-width: 26rem; margin-inline: auto; }
   }
 </style>
