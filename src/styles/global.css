@@ -67,13 +67,15 @@ a:hover { color: var(--accent-text); }
   display: inline-block;
   padding: 0.7em 1.4em;
   border: 2px solid var(--accent);
-  color: var(--ink);
+  background: var(--accent);
+  color: var(--ink); /* dark on orange: ~7.6:1; white would fail contrast */
   font-weight: 500;
   font-size: var(--step--1);
   text-decoration: none;
   transition: background-color 0.2s, color 0.2s;
 }
-.button:hover { background: var(--accent); color: #fff; }
+/* Solid orange means "press me" across the site; nothing else is filled orange. */
+.button:hover { background: var(--accent-text); border-color: var(--accent-text); color: #fff; }
 
 .chip {
   display: inline-block;

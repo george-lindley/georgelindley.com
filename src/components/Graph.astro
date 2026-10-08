@@ -46,17 +46,16 @@ const style = transitionName ? `view-transition-name: ${transitionName}; view-tr
 </svg>
 
 <style>
-  .graph { font-family: var(--font); --pale: color-mix(in srgb, var(--accent) 55%, var(--paper)); }
+  .graph { font-family: var(--font); }
   .edge .stroke { fill: none; stroke: #c4c4bf; stroke-width: 1.5; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 0.7s var(--ease) forwards; animation-delay: calc(0.35s + var(--i) * 0.14s); }
   .edge .head { fill: #c4c4bf; opacity: 0; animation: fade 0.2s linear forwards; animation-delay: calc(0.95s + var(--i) * 0.14s); }
-  .edge.hot .stroke { stroke: var(--pale); stroke-width: 2.25; }
-  .edge.hot .head { fill: var(--pale); }
+  .edge.hot .stroke { stroke: var(--accent); stroke-width: 2.25; }
+  .edge.hot .head { fill: var(--accent); }
   .node { opacity: 0; animation: pop 0.5s var(--ease) forwards; animation-delay: calc(var(--i) * 0.08s); transform-box: fill-box; transform-origin: center; }
   .node rect { fill: var(--paper); stroke: #c4c4bf; stroke-width: 1.25; }
   .node text { fill: var(--ink); font-size: 13px; font-weight: 500; }
-  /* A pale tint, not the solid orange of buttons, so nodes don't look clickable.
-     Arrows on the path share the outline's tint; the thicker stroke carries the path. */
-  .node.hot rect { fill: color-mix(in srgb, var(--accent) 22%, var(--paper)); stroke: var(--pale); }
+  /* Outlined, not filled: solid orange is kept for buttons, so nodes never look clickable. */
+  .node.hot rect { fill: var(--paper); stroke: var(--accent); stroke-width: 1.75; }
   /* Inside a .graph-host, hovering redraws the arrows. Swapping to an identical
      keyframes name is what restarts a CSS animation; it replays on leave too. */
   :global(.graph-host:hover) .edge .stroke { animation-name: redraw; animation-delay: calc(var(--i) * 0.1s); }
