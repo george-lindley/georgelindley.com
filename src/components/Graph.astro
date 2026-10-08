@@ -54,8 +54,9 @@ const style = transitionName ? `view-transition-name: ${transitionName}; view-tr
   .node { opacity: 0; animation: pop 0.5s var(--ease) forwards; animation-delay: calc(var(--i) * 0.08s); transform-box: fill-box; transform-origin: center; }
   .node rect { fill: var(--paper); stroke: #c4c4bf; stroke-width: 1.25; }
   .node text { fill: var(--ink); font-size: 13px; font-weight: 500; }
-  .node.hot rect { fill: var(--accent); stroke: var(--accent); }
-  .node.hot text { fill: var(--ink); } /* dark on orange: ~7.6:1; white would fail contrast */
+  /* A pale tint, not the solid orange of buttons, so nodes don't look clickable.
+     The orange arrows still carry the highlighted path. */
+  .node.hot rect { fill: color-mix(in srgb, var(--accent) 22%, var(--paper)); stroke: color-mix(in srgb, var(--accent) 55%, var(--paper)); }
   /* Inside a .graph-host, hovering redraws the arrows. Swapping to an identical
      keyframes name is what restarts a CSS animation; it replays on leave too. */
   :global(.graph-host:hover) .edge .stroke { animation-name: redraw; animation-delay: calc(var(--i) * 0.1s); }
