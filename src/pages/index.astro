@@ -18,8 +18,7 @@ import { profile, about } from '../data/profile';
       <ul class="current">
         {about.current.map((c) => (
           <li>
-            {'href' in c ? <a href={c.href}><strong>{c.name}</strong></a> : <strong>{c.name}</strong>}
-            {c.text.startsWith('(') ? ' ' : ', '}{c.text}
+            <a href={c.href}><strong>{c.name}</strong></a>, {c.text}
           </li>
         ))}
       </ul>

@@ -26,7 +26,7 @@ export const about = {
     {
       name: "Saudi Tender Intelligence",
       href: "/project/saudi-tender-intelligence/",
-      text: "an AI bid desk I built for Pearson: a neural-network recommender ranks new Saudi government tenders by fit, and estimates each one's value, competition and compliance risk.",
+      text: "an AI tool that builds on my MSc research at Aston: a neural-network recommender ranks new Saudi government tenders by fit, and estimates each one's value, competition and compliance risk. It informs my work at Pearson.",
     },
     {
       name: "Causal Blocks",
@@ -37,10 +37,6 @@ export const about = {
       name: "Regulated Plants Database",
       href: "/project/invasive-plants-geospatial-analytics/",
       text: "a public reference database of regulated invasive plants, published with United Nations University (UNU-INWEH) and UC Davis. I handle the centralisation, cleaning, analysis and visualisation of the regulatory data.",
-    },
-    {
-      name: "Saudi Procurement Bid Intelligence",
-      text: "(MSc dissertation, Aston University), testing whether national procurement award data can support supplier bid decisions, and where the limits of that intelligence lie.",
     },
   ],
 } as const;
@@ -65,7 +61,7 @@ export const resume = {
       points: [
         "Lead commercial and growth strategy for KSA and Bahrain; have managed an account manager since 2022.",
         "Championed 3 new schools titles for the most lucrative segments (2 in 2027, 1 in 2028), with a new bundled-solutions offer.",
-        "Set up Saudi tender intelligence where Pearson had no bid desk, surfacing the 2–3 tenders a month worth acting on.",
+        "Track Arabic-language education tenders with my own AI tool, sending colleagues the 2–3 a month worth acting on.",
         "Act as solutions consultant in university technical decisions, such as LTI integration versus batch registration for digital learning platforms.",
         "Translate institutional and workforce needs into product positioning, pricing and go-to-market decisions with senior commercial, academic and product stakeholders.",
       ],
