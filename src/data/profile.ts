@@ -121,7 +121,7 @@ export const resume = {
       ],
     },
     {
-      period: "2017 - 2021",
+      period: "2021",
       title: "Sales Training: PASS and iSell (Sales Academy)",
       org: "Pearson Education",
       points: [
