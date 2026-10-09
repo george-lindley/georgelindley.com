@@ -158,7 +158,6 @@ export const resume = {
         { name: "Education & Workforce Strategy", value: 90 },
         { name: "Institutional Partnerships", value: 90 },
         { name: "Market & Growth Strategy", value: 90 },
-        { name: "Programme / Skills Alignment", value: 80 },
         { name: "Commercial & CRM Analytics", value: 90 },
         { name: "Stakeholder Implementation", value: 80 },
       ],
