@@ -153,16 +153,6 @@ export const resume = {
   ],
   skills: [
     {
-      title: "Strategic Capabilities",
-      items: [
-        { name: "Education & Workforce Strategy", value: 90 },
-        { name: "Institutional Partnerships", value: 90 },
-        { name: "Market & Growth Strategy", value: 90 },
-        { name: "Commercial & CRM Analytics", value: 90 },
-        { name: "Stakeholder Implementation", value: 80 },
-      ],
-    },
-    {
       title: "AI, Analytics & Product Capabilities",
       items: [
         { name: "Python / SQL Analytics", value: 80 },
@@ -171,6 +161,16 @@ export const resume = {
         { name: "Data Visualisation and Dashboards", value: 80 },
         { name: "Git / Version Control", value: 70 },
         { name: "Product Prototyping", value: 70 },
+      ],
+    },
+    {
+      title: "Strategic Capabilities",
+      items: [
+        { name: "Education & Workforce Strategy", value: 90 },
+        { name: "Institutional Partnerships", value: 90 },
+        { name: "Market & Growth Strategy", value: 90 },
+        { name: "Commercial & CRM Analytics", value: 90 },
+        { name: "Stakeholder Implementation", value: 80 },
       ],
     },
   ],
