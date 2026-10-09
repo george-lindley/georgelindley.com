@@ -22,17 +22,23 @@ In June 2025 I started collecting the data and building my own tool to answer tw
 
 -   **Collection.** Etimad is scraped five times a day, so new tenders are picked up while there is still time to respond.
 -   **Matching.** Each tender is embedded with OpenAI embeddings and searched in Qdrant, a vector database, against an English profile of the education products I work with. Cross-lingual retrieval matches Arabic tenders to English descriptions without translating everything first.
--   **Scoring.** The candidates are then ranked by a neural recommender system, described below. Its output is the fit score on each match.
+-   **Scoring.** The candidates are then ranked by a neural recommender trained on six years of bids, described below. Its output is the fit score on each match.
 -   **Explanation.** An LLM writes the reason behind each match in plain English, so it takes seconds to see why a tender was flagged.
 -   **Estimation.** For each shortlisted tender, the tool estimates its likely winning price, the number of competitors to expect and the chance of rejection on compliance, so a decision rests on more than a keyword match.
 
 ![Illustrative example with sample data: the intelligence panel for one tender. Under the notice details Etimad publishes, three estimates: a likely winning price of SAR 2.4 to 3.1 million, 3 to 5 likely bidders, and a 1 in 4 chance of rejection on compliance, mostly for missing local-content documents.](../../assets/uploads/2026/10/tender-intelligence.jpg)
 
-Each run produces a scored file of opportunities. Of about 2,000 new tenders a month, typically 2–3 are worth acting on, and I send colleagues the links to those.
+Each run produces a scored file of opportunities. Of about 2,000 new tenders a month, typically 2–3 are worth acting on, and I send to Pearson colleagues the links to those (where I currently work).
 
-## The Recommender Behind the Scores
+## How It Evolved
 
-The fit scores come from a two-tower neural network, the standard architecture for large recommender systems. One tower turns each tender into a vector from its text, agency, activity and value; the other does the same for a supplier from what it offers and what it has won before. A tender and a supplier that belong together end up close in that shared space, and the distance between them becomes the score. The model is trained on six years of Etimad awards, so it learns from what suppliers actually won rather than from keyword overlap. That makes the system two-stage, like most production recommenders: fast embedding search narrows 100 new tenders a day to a shortlist, and the recommender ranks the shortlist.
+**Version 1: semantic matching.** The first system embedded every tender with OpenAI embeddings, stored them in Qdrant, and embedded a company profile the same way. Tenders that sat close to the profile in vector space ranked highest. It was fast, worked across Arabic and English, and produced the first ranked lists of opportunities. But the scores measured how similar two pieces of text were, not how likely a tender was to be worth bidding for. Nothing in the system had ever seen an outcome, so a high score could not be checked against anything.
+
+**Version 2: learning from outcomes.** Six years of Etimad awards record who actually bid on what. Version 2 is a two-tower neural network, the architecture behind large recommender systems such as YouTube's, trained on that history. One tower turns each tender into a vector from its text, agency, activity and value; the other does the same for a supplier from what it offers and what it has bid on before. Training pulls suppliers towards the tenders they really bid on, so closeness now means likely interest rather than similar wording.
+
+Learning from history also makes the system testable on history. The model is trained on earlier tenders and tested on later ones it has never seen: does it predict who actually bid? That gives every score an accuracy measure behind it, and a target to improve against. The version 1 approach is the baseline it has to beat.
+
+In a sense, version 1 was already a two-tower model, just an untrained one: both sides passed through the same off-the-shelf encoder. Version 2 keeps the shape and trains each tower on real behaviour.
 
 ## Understanding the Market
 
