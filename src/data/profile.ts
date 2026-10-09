@@ -156,6 +156,7 @@ export const resume = {
       title: "AI, Analytics & Product Capabilities",
       items: [
         { name: "Vector Search and Retrieval", value: 90 },
+        { name: "Recommender Systems / Neural Ranking", value: 70 },
         { name: "GenAI Workflow Design", value: 70 },
         { name: "Python / SQL Analytics", value: 80 },
         { name: "Data Visualisation and Dashboards", value: 80 },
