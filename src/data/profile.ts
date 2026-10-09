@@ -105,6 +105,14 @@ export const resume = {
       ],
     },
     {
+      period: "2026",
+      title: "Practical Deep Learning for Coders",
+      org: "fast.ai (online)",
+      points: [
+        "Training and fine-tuning deep learning models with PyTorch and fastai, including collaborative filtering for recommender systems.",
+      ],
+    },
+    {
       period: "2023",
       title: "CS50x: Introduction to Computer Science",
       org: "Harvard University (online)",
@@ -113,19 +121,11 @@ export const resume = {
       ],
     },
     {
-      period: "November 2021",
-      title: "iSell (Sales Academy)",
+      period: "2017 - 2021",
+      title: "Sales Training: PASS and iSell (Sales Academy)",
       org: "Pearson Education",
       points: [
-        "Internal training on advanced sales practices, including consultative selling techniques and strategic account management.",
-      ],
-    },
-    {
-      period: "December 2017",
-      title: "PASS Training (Sales)",
-      org: "Pearson Education",
-      points: [
-        "Sales methodology training for new hires, focusing on solution selling and customer engagement strategies.",
+        "Solution selling and customer engagement, then consultative selling and strategic account management.",
       ],
     },
     {
