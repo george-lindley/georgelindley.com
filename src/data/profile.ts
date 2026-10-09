@@ -46,7 +46,7 @@ export const resume = {
   summary: "GenAI and analytics products for education and workforce planning.",
   experience: [
     {
-      period: "November 2017 - Present",
+      period: "2017 - Present",
       title: "Pearson: across all roles",
       org: "Pearson Middle East",
       points: [
@@ -55,7 +55,7 @@ export const resume = {
       ],
     },
     {
-      period: "July 2021 - Present",
+      period: "2021 - Present",
       title: "Regional Commercial Lead, KSA and Bahrain",
       org: "Pearson Middle East",
       points: [
@@ -67,7 +67,7 @@ export const resume = {
       ],
     },
     {
-      period: "October 2019 - July 2021",
+      period: "2019 - 2021",
       title: "Learning Consultant",
       org: "Pearson Middle East",
       points: [
@@ -77,7 +77,7 @@ export const resume = {
       ],
     },
     {
-      period: "November 2017 - September 2019",
+      period: "2017 - 2019",
       title: "Sales Manager",
       org: "Pearson Saudi Arabia",
       points: [
@@ -87,7 +87,7 @@ export const resume = {
       ],
     },
     {
-      period: "April 2016 - October 2017",
+      period: "2016 - 2017",
       title: "Language Teacher / EdTech Contributor",
       org: "King Saud University",
       points: [
@@ -97,7 +97,7 @@ export const resume = {
   ],
   education: [
     {
-      period: "January 2025 - Present",
+      period: "2025 - Present",
       title: "MSc - Business Analytics",
       org: "Aston University",
       points: [
@@ -129,7 +129,7 @@ export const resume = {
       ],
     },
     {
-      period: "September 2010 - September 2011",
+      period: "2010 - 2011",
       title: "MA - International Relations",
       org: "University of Warwick",
       points: [
@@ -137,7 +137,7 @@ export const resume = {
       ],
     },
     {
-      period: "September 2006 - June 2009",
+      period: "2006 - 2009",
       title: "BSc - Modern Languages",
       org: "Aston University",
       points: [
