@@ -153,7 +153,7 @@ export const resume = {
   ],
   skills: [
     {
-      title: "AI, Analytics & Product Capabilities",
+      title: "AI and Analytics",
       items: [
         { name: "Vector Search and Retrieval", value: 90 },
         { name: "Recommender Systems / Neural Ranking", value: 70 },
