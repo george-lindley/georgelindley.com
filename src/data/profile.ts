@@ -161,7 +161,6 @@ export const resume = {
         { name: "Python / SQL Analytics", value: 80 },
         { name: "Data Visualisation and Dashboards", value: 80 },
         { name: "Git / Version Control", value: 70 },
-        { name: "Product Prototyping", value: 70 },
       ],
     },
     {
