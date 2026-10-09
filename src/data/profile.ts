@@ -98,7 +98,7 @@ export const resume = {
   education: [
     {
       period: "January 2025 - Present",
-      title: "Masters in Business Analytics",
+      title: "MSc - Business Analytics",
       org: "Aston University",
       points: [
         "Dissertation: Saudi Procurement Bid Intelligence, testing whether national procurement award data can support supplier bid decisions, and where the limits of that intelligence lie.",
@@ -170,7 +170,6 @@ export const resume = {
         { name: "GenAI Workflow Design", value: 70 },
         { name: "Vector Search and Retrieval", value: 90 },
         { name: "Data Visualisation and Dashboards", value: 80 },
-        { name: "Evaluation Design", value: 70 },
         { name: "Git / Version Control", value: 70 },
         { name: "Product Prototyping", value: 70 },
       ],
