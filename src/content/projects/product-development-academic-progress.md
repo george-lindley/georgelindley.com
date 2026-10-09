@@ -16,14 +16,14 @@ Designing and Scaling a Digital-First English Programme for the Middle East
 
 In 2019, as Learning Consultant for Pearson Middle East, I led the regional market research and business case for a new English language programme: **Academic Progress**.
 
-Gulf education systems were investing heavily in digital learning, and universities wanted courseware that matched: interactive, measurable, and relevant to their students. The objective was not simply to launch a new course, but to design a programme that:
+Universities in the Middle East were on a fast-track course towards digitization, and they wanted courseware that matched: interactive, measurable, and relevant to their students. The objective was to design a programme that:
 
 -   Worked as a digital product first: an interactive eBook, online practice and progress data
 -   Reflected real classroom needs and local culture
 -   Aligned with institutional procurement and regulatory requirements
 -   Scaled across universities and countries in the region
 
-The series became Pearson's number one-selling English course across Africa, the Middle East and Turkey in 2020, 2021 and 2022. I then led its expansion beyond Saudi Arabia: the series is now used in Qatar, Kuwait and the UAE.
+The series became Pearson's number one-selling English course across Africa, the Middle East and Turkey between 2020 and 2025. I worked across teams for its launch in Saudi Arabia, and then expansion to Qatar, Kuwait and the UAE.
 
 The success was rooted in a structured, data-led development framework.
 

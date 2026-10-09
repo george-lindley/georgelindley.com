@@ -49,17 +49,7 @@ Regulatory lists from multiple jurisdictions were consolidated into a unified an
 
 This step resolved inconsistencies that typically prevent meaningful comparison across regions.
 
-### 2\. Metric & Threshold Design
-
-To support decision-making, raw counts were transformed into interpretable signals:
-
--   Jurisdiction-level regulations - allowing the user to toggle between state/country/international
--   Fixed analytical thresholds enabling cross-region comparison
--   Visual encoding optimised for policy interpretation
-
-The emphasis was on clarity and comparability.
-
-### 3\. Analytical Interfaces
+### 2\. Analytical Interfaces
 
 Two complementary analytical views were implemented to cater for different user groups (see 'stakeholder groups' below):
 
@@ -99,7 +89,8 @@ We are approaching e-commerce giants to integrate the API into their websites, t
 
 **Live platform:**
 
-[https://regulatedplants.unu.edu](https://regulatedplants.unu.edu)  
+[https://regulatedplants.unu.edu](https://regulatedplants.unu.edu)
+
 **Code repository (open source):**
 
 [https://github.com/oozr/invasive\_plants](https://github.com/oozr/invasive_plants)
