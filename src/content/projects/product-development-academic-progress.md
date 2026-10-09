@@ -9,7 +9,7 @@ card:
   role: "Learning consultant · Pearson Middle East"
   problem: "Gulf preparatory-year programmes needed English courseware made for digital classrooms and local students, not imported print."
   action: "I led the market research and business case for an interactive eBook series with regional lessons and online practice, now joined by an AI lesson generator for teachers."
-  outcome: "Pearson's best-selling English course in Africa, the Middle East and Turkey, 2020–2022."
+  outcome: "Pearson's best-selling English course in Africa, the Middle East and Turkey, 2020–2025."
 ---
 
 Designing and Scaling a Digital-First English Programme for the Middle East
@@ -142,7 +142,7 @@ Market intelligence → Product alignment → Institutional co-creation → Earl
 
 # Commercial & Strategic Impact
 
-Academic Progress became Pearson's best-selling English course across Africa, the Middle East and Turkey for three consecutive years.
+Academic Progress became Pearson's best-selling English course across Africa, the Middle East and Turkey for six consecutive years, 2020–2025.
 
 While commercial figures remain confidential, the measurable impact included:
 

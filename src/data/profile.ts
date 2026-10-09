@@ -71,7 +71,7 @@ export const resume = {
       title: "Learning Consultant",
       org: "Pearson Middle East",
       points: [
-        "Championed Academic Progress from market research to launch: institutional data, focus groups, forecasts, local guidelines and USP. It became Pearson's #1 English course in Africa, the Middle East and Turkey, 2020–2022.",
+        "Championed Academic Progress from market research to launch: institutional data, focus groups, forecasts, local guidelines and USP. It became Pearson's #1 English course in Africa, the Middle East and Turkey, 2020–2025.",
         "Led its expansion beyond KSA, into Qatar, Kuwait and the UAE.",
         "Advised regional universities on English programmes and learning outcomes, and led digital learning platform rollouts through adoption and change management.",
       ],
