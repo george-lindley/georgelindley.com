@@ -14,13 +14,13 @@ card:
 
 ## Solution Overview
 
-"Correlation is not causation" is one of the first things anyone learns about data. Almost nobody is taught what to do instead. Most statistics and analytics courses teach estimation in depth, then leave students with a rule of thumb: when in doubt, control for more variables. That rule can quietly change the question being answered, or create bias that wasn't there.
+"Correlation is not causation" is one of the first things anyone learns about data. But then we're not taught what to do instead. Most statistics and analytics courses teach estimation in depth, then leave students with a rule of thumb: when in doubt, control for more variables. That rule can quietly change the question being answered, or create bias that wasn't there.
 
 Causal Blocks is an interactive tool for learning causal inference by doing it. Students drag data columns onto a canvas as blocks, draw arrows for what they believe causes what, and watch an estimate from DoWhy, the open-source causal inference library started at Microsoft, update with every arrow. No Python required. Each block is coloured by the role the graph gives it: confounder, mediator, collider or instrument. The graph explains itself.
 
 [![Screenshot of the Causal Blocks demo: a causal graph of region, town size, deprivation and coastal location feeding an education score, beside a panel reporting a total effect of −0.70 for larger towns.](../../assets/uploads/2026/09/demo.png)](https://causalblocks.com)
 
-## What's New, and What Isn't
+## What's New
 
 Causal graphs are not my invention. Directed acyclic graphs (DAGs) are the standard language of causal inference, formalised by Judea Pearl, and good tools already exist on both sides. [DAGitty](https://www.dagitty.net/) lets you draw a DAG and tells you what to control for. [DoWhy](https://www.pywhy.org/dowhy/) estimates causal effects from data and tests them, but you have to write Python to use it.
 
@@ -28,21 +28,21 @@ What Causal Blocks adds is the bridge between the two, in a form built for learn
 
 -   **Drawing and estimating in one place.** The blocks you draw become the graph DoWhy uses, so every arrow you add or remove changes the estimate in front of you, with no code to write.
 -   **Blocks that show their role.** Each block's colour comes from where it sits in the graph, so a confounder, a mediator and a collider look different the moment you draw them, and the tool explains what that means for what to control for. In the game (see Future Development), the blocks go further and get personalities, so younger learners can recognise causal patterns by character.
--   **A learning environment, not a research tool.** Guided presets, deliberate "common mistake" modes and plain-English coaching are designed for people meeting causal inference for the first time.
+-   **A fun learning environment.** Guided presets, deliberate "common mistake" modes and plain-English humorous coaching are designed for people meeting causal inference for the first time.
 
 ## Inspiration
 
-The project started with a dataset. In January 2024, [#TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/main/data/2024/2024-01-23/readme.md), the weekly open-data project from the R community, republished the Office for National Statistics data on educational attainment in English towns. It came with the ONS article [*Why do children and young people in smaller towns do better academically than those in larger towns?*](https://www.ons.gov.uk/peoplepopulationandcommunity/educationandchildcare/articles/whydochildrenandyoungpeopleinsmallertownsdobetteracademicallythanthoseinlargertowns/2023-07-25) (July 2023).
+The project started with a dataset. In January 2024, [#TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/main/data/2024/2024-01-23/readme.md), the weekly open-data project from the R community, republished the UK Office for National Statistics (ONS) data on educational attainment in English towns. It came with the ONS article [*Why do children and young people in smaller towns do better academically than those in larger towns?*](https://www.ons.gov.uk/peoplepopulationandcommunity/educationandchildcare/articles/whydochildrenandyoungpeopleinsmallertownsdobetteracademicallythanthoseinlargertowns/2023-07-25) (July 2023).
 
 The title asks a causal question. The body of the article answers it with correlations. That gap, between the question people want answered and the methods they are taught, is what convinced me causal thinking needs to reach a much wider audience, and that the way to get it there is to make it something people can see and play with.
 
 ## The Demo: England's Small Towns
 
-The first example uses UK Office for National Statistics (ONS) data on educational attainment across 1,082 English towns. The ONS reported that children in smaller towns do better at school. The demo shows three readings of the same data:
+The foundational example on the site uses the same ONS data on educational attainment across 1,082 English towns. The ONS reported that children in smaller towns do better at school. The demo shows three readings of the same data:
 
 -   The correlation: small towns look better.
 -   Controlling for everything: the sign flips, and large towns look better.
--   The causal graph: it explains why. The small-town advantage runs almost entirely through deprivation, and among equally deprived towns, larger ones come out ahead.
+-   The causal graph: it explains why. The small-town advantage runs almost entirely through deprivation, and among equally deprived towns, larger ones come out ahead. This means the size of the town actually serves to mask the substantial effects of deprivation on education.
 
 Two red "common mistake" presets let students reproduce each wrong reading and see what went wrong.
 
