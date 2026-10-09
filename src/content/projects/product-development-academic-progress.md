@@ -29,9 +29,9 @@ The success was rooted in a structured, data-led development framework.
 
 * * *
 
-# Strategic Framework: A Five-Stage Development Model
+# Development Model
 
-Rather than beginning with content assumptions, we began with structured market intelligence.
+We began with structured market intelligence and included customer feedback in every step.
 
 * * *
 
@@ -40,11 +40,10 @@ Rather than beginning with content assumptions, we began with structured market 
 I led the sales team in systematically collecting institutional data on:
 
 -   Course structures currently in use
--   Competitor materials and their digital offer
 -   Skill segmentation models
 -   Curriculum configurations across preparatory year programmes
 
-Instead of building a product from scratch, we selected a global base title from Pearson's portfolio that most closely matched existing market structures, and rebuilt it for the region. This reduced switching friction and increased adoption feasibility.
+We selected a global base title from Pearson's portfolio that most closely matched existing market structures, and rebuilt it for the region with an identified USP. This kept the budget down and reduced switching friction.
 
 The approach mirrored early-stage product analytics: start with observable demand patterns before building supply.
 
@@ -56,12 +55,14 @@ Analysis revealed:
 
 -   55% of preparatory year revenue (the addressable market) used split-skills courseware (separate Reading & Writing and Listening & Speaking components)
 -   Existing materials were largely "academic-lite", favouring general-interest themes over STEM-oriented content
+-   A digital presentation tool was key for teachers, who are among the decision makers
 
 This insight shaped product positioning:
 
 -   Keep structural compatibility (the split-skills model)
--   Raise academic depth and skills integration
--   Differentiate through digital delivery and stronger institutional alignment
+-   Raise academic depth and skills integration from an earlier level
+-   Add KSA context to a greater degree than the competitors (content that is culturally sensitive and culturally relevant)
+-   Differentiate through digital delivery first
 
 This was less about publishing and more about product-market fit.
 
@@ -78,7 +79,7 @@ We then ran targeted focus groups with selected institutional representatives, c
 
 The objective was dual:
 
-1.  Identify product gaps relative to competitor offerings
+1.  Identify motivational topics for the students and identify preferred teaching/learning styles
 2.  Build institutional champions through co-creation
 
 This stage turned customers from end users into contributors within the design cycle.
@@ -98,7 +99,7 @@ Every unit lives in an interactive eBook, with embedded activities and links str
 
 ![The Academic Progress interactive eBook open on the "Plan a Start-Up" lesson, a 21st-century skills unit built around the story of Saudi founder Ebrahim Al-Jassim and Hunger Station, with numbered activity links down the margin and an Online Practice button.](../../assets/uploads/2022/08/ap-ebook-hunger-station.jpg)
 
-These changes were not cosmetic. They reduced institutional resistance and strengthened curriculum alignment.
+These changes alligned with the digitisation strategy of the Saudi universities, and created more motivational lessons for the students.
 
 * * *
 
@@ -122,7 +123,7 @@ Digital tools for teachers were part of the business case from the start, and th
 
 * * *
 
-# Execution as Institutional System Design
+# Execution & System Design
 
 From a strategic perspective, Academic Progress demonstrates:
 
@@ -133,7 +134,7 @@ From a strategic perspective, Academic Progress demonstrates:
 -   Early adopter activation
 -   Scalable regional rollout
 
-Rather than treating education publishing as content creation, this project treated it as a systems problem:
+Taken together, these steps are system design rather than publishing: each stage fed the next, and the whole programme was built around the universities' own goals for digital learning.
 
 Market intelligence → Product alignment → Institutional co-creation → Early adoption → Iterative refinement → Regional scaling.
 
@@ -150,11 +151,9 @@ While commercial figures remain confidential, the measurable impact included:
 -   Multi-year market penetration
 -   Strong alignment with preparatory year programme structures
 
-The success was not driven by aggressive sales tactics, but by disciplined market alignment and a product built for how Gulf institutions teach today.
+The success was driven by disciplined market alignment and a product built for how Gulf institutions teach today, alongside successful sales and marketing strategy.
 
 * * *
-
-# Why This Project Matters
 
 This project sits at the intersection of:
 
@@ -165,4 +164,4 @@ This project sits at the intersection of:
 
 It complements my work in AI tender intelligence and regulatory data (Regulated Plants) by demonstrating the same underlying principle:
 
-**Complex, policy-driven environments require structured system design, not surface-level optimisation.**
+**Complex, policy-driven environments require structured system design.**
