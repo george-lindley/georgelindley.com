@@ -48,10 +48,14 @@ A static site hosted on GitHub Pages, with no backend. A Python build step runs 
 
 ## Future Development
 
-The next step is "bring your own data": upload a CSV, turn its columns into blocks, and run DoWhy directly in the browser, with no data leaving the student's machine. A proof of concept already runs the full DoWhy pipeline in the browser with results identical to native Python. Further worked examples from other fields will follow, since the towns data is only the first case study.
+The next step is a game that teaches causal thinking to middle schoolers, long before they meet a regression. Players explore small worlds where things happen for a reason (a crop fails, a town floods, a team starts winning) and work out why by drawing the arrows, testing a change, and seeing whether the world behaves the way their graph predicts.
+
+It is being built in two halves that shape each other. A coding agent builds the worlds and the game mechanics quickly enough to try an idea in a day. My side is the learning design: what a 12-year-old can reason about, how to sequence ideas from "this causes that" up to confounders and hidden common causes, and where to put the scaffolding so each level is a stretch but never a wall. Each playtest feeds both: what children struggle with changes the curriculum, and the curriculum decides what the agent builds next.
+
+It draws on the same thing as the rest of Causal Blocks: ten years of curriculum and course development, and a belief that causality is a way of thinking worth teaching early.
 
 ## Links
 
--   Live site: [causalblocks](https://causalblocks.com)[.](https://causalblocks.com)[com](https://causalblocks.com)
+-   Live site: [causalblocks.com](https://causalblocks.com)
 -   Essay: [Do small towns really educate children better?](/do-small-towns-really-provide-better-education-a-uk-detective-story/)
 -   Source code: [github.com/george-lindley/causal-blocks](http://github.com/george-lindley/causal-blocks) (open source, MIT)
