@@ -15,6 +15,10 @@ export default defineConfig({
     '/category/business-technology': '/blog/',
   },
 
+  // Code blocks here are maths and printed output, not code, so they take the site's
+  // own light .prose pre style rather than Shiki's dark theme.
+  markdown: { syntaxHighlight: false },
+
   fonts: [
     {
       name: 'Poppins',
