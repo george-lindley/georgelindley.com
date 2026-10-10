@@ -13,6 +13,8 @@ export default defineConfig({
     '/category/data-analytics': '/blog/',
     '/category/education': '/blog/',
     '/category/business-technology': '/blog/',
+    // Renamed the day it went up, when the post was cut to its first half.
+    '/does-official-english-make-people-speak-better-than-they-write': '/why-native-english-speakers-dont-top-ielts/',
   },
 
   // Code blocks here are maths and printed output, not code, so they take the site's
