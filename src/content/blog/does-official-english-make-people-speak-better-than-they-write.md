@@ -32,7 +32,17 @@ So the league table can't tell us who speaks the best English. The people who ne
 
 One pattern kept catching my eye. Groups from multilingual African countries, where English is used every day, score far higher in **Speaking** than in **Writing**. A natural hypothesis: where English is an official language, people hear and speak it daily, so their spoken English runs ahead of their written English.
 
-That question avoids the selection problem in a simple way. Instead of each group's overall score, I used **Speaking minus Writing**. Whatever brought someone to the test (education, wealth, ambition) tends to raise both skills together, so it cancels out. Each group is its own baseline.
+That question gets round the selection problem in a simple way. Instead of comparing one group's score with another's, it compares two skills within the same group: **Speaking minus Writing**. The people are the same in both tests, so whatever brought them to IELTS is the same too.
+
+Splitting the score into its two skills shows how this works:
+
+![Causal graph: Official English points to Spoken exposure, which points to Speaking. Education points to both Speaking and Writing, with a note that it lifts both by the same amount and so cancels in the gap. School quality points to Writing. Speaking feeds the Speak–Write gap with a plus sign, Writing with a minus sign. Education, Spoken exposure and School quality are faded, meaning they are not measured.](../../assets/uploads/2026/10/ielts-dag-skills.png)
+
+-   **Education**, and everything else that selects who sits the test (wealth, ambition, preparation), lifts speaking and writing together. Add the same amount to both, subtract one from the other, and it disappears. That's why the collider from the first graph stops mattering: the bias it creates runs through the *level* of a group's English, and the gap ignores the level.
+-   **Spoken exposure** pushes only speaking up, so it survives the subtraction. That's the effect I want to see.
+-   **School quality** pushes mostly writing up, so it survives too, and it still needs dealing with.
+
+The subtraction removes the causes that lift both skills and keeps the ones that favour one over the other. Each group is its own baseline.
 
 For whether English is official, I used Wikipedia's [list of countries where English is an official language](https://en.wikipedia.org/w/index.php?title=List_of_countries_and_territories_where_English_is_an_official_language&oldid=1378630797), pinned to one revision so anyone can rebuild the column.
 
