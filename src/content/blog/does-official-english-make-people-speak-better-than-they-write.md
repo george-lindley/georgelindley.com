@@ -57,7 +57,7 @@ Subtract the second line from the first, and Education drops out:
 Gap = a·Exposure − c·School + noise
 ```
 
-The algebra also shows the assumption the graph hides. Education only cancels if it has the same effect, **b**, on both skills. If it lifted writing more than speaking (say, because test preparation in some countries drills essay templates), a leftover piece would remain and the bias would come back. Drawing the graph tells you what *might* cancel; writing the equations tells you what has to be true for it to cancel.
+The algebra also shows the assumption the graph hides. Education only cancels if it has the same effect, **b**, on both skills. If it lifted writing more than speaking (say, because test preparation in some countries drills essay templates), a leftover piece would remain and the bias would come back.
 
 For whether English is official, I used Wikipedia's [list of countries where English is an official language](https://en.wikipedia.org/w/index.php?title=List_of_countries_and_territories_where_English_is_an_official_language&oldid=1378630797), pinned to one revision so anyone can rebuild the column.
 
